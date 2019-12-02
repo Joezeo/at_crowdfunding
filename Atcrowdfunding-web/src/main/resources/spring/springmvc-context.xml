@@ -30,7 +30,6 @@
 	    </property>
     </bean>
     
-    
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
         <property name="prefix" value="/WEB-INF/jsp/"></property>
@@ -50,4 +49,12 @@
         <property name="maxUploadSize" value="2097152"/>
         <property name="resolveLazily" value="true"/>
     </bean>
+
+<!--    <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/img/**" location="/img/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/fonts/**" location="/fonts/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/jquery/**" location="/jquery/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/script/**" location="/script/"></mvc:resources>-->
+<!--    <mvc:resources mapping="/ztree/**" location="/ztree/"></mvc:resources>-->
 </beans>
