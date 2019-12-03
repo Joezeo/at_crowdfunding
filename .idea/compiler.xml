@@ -10,6 +10,7 @@
         <module name="Atcrowdfunding-bean" />
         <module name="Atcrowdfunding-manager-impl" />
         <module name="Atcrowdfunding-potal-impl" />
+        <module name="mybatis-MBG" />
         <module name="Atcrowdfunding-web" />
         <module name="Atcrowdfunding-manager-api" />
         <module name="Atcrowdfunding-common" />
@@ -24,6 +25,7 @@
       <module name="Atcrowdfunding-potal-api" target="1.5" />
       <module name="Atcrowdfunding-potal-impl" target="1.5" />
       <module name="Atcrowdfunding-web" target="1.7" />
+      <module name="mybatis-MBG" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
