@@ -24,7 +24,11 @@ function doLogin() {
             } else {
                 $("#acct_feedback").html("");
                 $("#pwd_feedback").html("");
-                alert(result.message);
+                // layer.msg(result.message, {time:1000, icon:5, shift:6}, null);
+                layer.msg(result.message, {time:1000, icon:5, shift:1}, function () {
+                    $('#f_loginacct').val("");
+                    $('#f_userpswd').val("");
+                });
             }
         }
     });
@@ -35,6 +39,9 @@ function valid() {
 
     if($.trim($('#f_loginacct').val()) == ""){
         $("#acct_feedback").html("账号不可为空,请输入登录账号");
+        // layer.msg("账号不可为空,请输入登录账号", {time:1000, icon:5, shift:1}, function () {
+        //     $('#f_loginacct').val("");
+        // });
         $('#f_loginacct').val("");
         tag = false;
     } else {
@@ -43,6 +50,9 @@ function valid() {
 
     if($('#f_userpswd').val() == ""){
         $("#pwd_feedback").html("密码不可为空，请输入密码");
+        // layer.msg("密码不可为空，请输入密码", {time:1000, icon:5, shift:1}, function () {
+        //     $('#f_loginacct').val("");
+        // });
         tag =  false;
     } else {
         $("#pwd_feedback").html("")
