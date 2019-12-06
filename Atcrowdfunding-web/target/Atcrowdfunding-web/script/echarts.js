@@ -1087,7 +1087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        else if (opt.flush !== false && env.browser.weChat) {
 	            // In WeChat embeded browser, `requestAnimationFrame` and `setInterval`
 	            // hang when sliding page (on touch event), which cause that zr does not
-	            // refresh util user interaction finished, which is not expected.
+	            // refresh utils user interaction finished, which is not expected.
 	            // But `dispatchAction` may be called too frequently when pan on touch
 	            // screen, which impacts performance if do not throttle them.
 	            this._throttledZrFlush();
@@ -3130,7 +3130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _ctx;
 	    function getContext() {
 	        if (!_ctx) {
-	            // Use util.createCanvas instead of createCanvas
+	            // Use utils.createCanvas instead of createCanvas
 	            // because createCanvas may be overwritten in different environment
 	            _ctx = util.createCanvas().getContext('2d');
 	        }
@@ -3487,7 +3487,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // used in this case: `var someVal = map.set('a', genVal());`
 	            return value;
 	        },
-	        // Although util.each can be performed on this hashMap directly, user
+	        // Although utils.each can be performed on this hashMap directly, user
 	        // should not use the exposed keys, who are prefixed.
 	        each: function (cb, context) {
 	            context !== void 0 && (cb = bind(cb, context));
@@ -4305,7 +4305,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {number} value
 	     * @param {boolean} [isUTC=false] Default in local time.
 	     *           see `module:echarts/scale/Time`
-	     *           and `module:echarts/util/number#parseDate`.
+	     *           and `module:echarts/utils/number#parseDate`.
 	     * @inner
 	     */
 	    formatUtil.formatTime = function (tpl, value, isUTC) {
@@ -4398,7 +4398,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        // Avoid accuracy problem in edge, such as
 	        // 146.39 - 62.83 === 83.55999999999999.
-	        // See echarts/test/ut/spec/util/number.js#linearMap#accuracyError
+	        // See echarts/test/ut/spec/utils/number.js#linearMap#accuracyError
 	        // It is a little verbose for efficiency considering this method
 	        // is a hotspot.
 	        if (clamp) {
@@ -16907,7 +16907,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:zrender/shape/util/smoothSpline
+	     * @alias module:zrender/shape/utils/smoothSpline
 	     * @param {Array} points 线段顶点数组
 	     * @param {boolean} isLoop
 	     * @return {Array}
@@ -16979,7 +16979,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 贝塞尔平滑曲线
-	     * @alias module:zrender/shape/util/smoothBezier
+	     * @alias module:zrender/shape/utils/smoothBezier
 	     * @param {Array} points 线段顶点数组
 	     * @param {number} smooth 平滑等级, 0-1
 	     * @param {boolean} isLoop
@@ -35420,7 +35420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	
 
-	    // var zrUtil = require('zrender/lib/core/util');
+	    // var zrUtil = require('zrender/lib/core/utils');
 	    var graphic = __webpack_require__(44);
 
 	    var MapDraw = __webpack_require__(181);
@@ -59734,7 +59734,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * [option in constructor]:
 	     * {
-	     *     Index/Id/Name of geo, xAxis, yAxis, grid: See util/model#parseFinder.
+	     *     Index/Id/Name of geo, xAxis, yAxis, grid: See utils/model#parseFinder.
 	     * }
 	     *
 	     *
@@ -59775,7 +59775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * {
 	     *     panelId: Used to locate coordInfo directly. If user inpput, no panelId.
 	     *     brushType: determine how to convert to/from coord('rect' or 'polygon' or 'lineX/Y').
-	     *     Index/Id/Name of geo, xAxis, yAxis, grid: See util/model#parseFinder.
+	     *     Index/Id/Name of geo, xAxis, yAxis, grid: See utils/model#parseFinder.
 	     *     range: pixel range.
 	     *     coordRange: representitive coord range (the first one of coordRanges).
 	     *     coordRanges: <Array> coord ranges, used in multiple cartesian in one grid.
@@ -64777,7 +64777,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    // See echarts/component/visualMap/typeDefaulter.
 	            range: null,            // selected range. In default case `range` is [min, max]
 	                                    // and can auto change along with modification of min max,
-	                                    // util use specifid a range.
+	                                    // utils use specifid a range.
 	            realtime: true,         // Whether realtime update.
 	            itemHeight: null,       // The length of the range control edge.
 	            itemWidth: null,        // The length of the other side.
@@ -65509,7 +65509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * FIXME
 	         * Do not publish to thirt-part-dev temporarily
-	         * util the interface is stable. (Should it return
+	         * utils the interface is stable. (Should it return
 	         * a function but not visual meta?)
 	         *
 	         * @pubilc
@@ -70113,8 +70113,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 
-	    // var zrUtil = require('zrender/lib/core/util');
-	    // var graphic = require('../../util/graphic');
+	    // var zrUtil = require('zrender/lib/core/utils');
+	    // var graphic = require('../../utils/graphic');
 	    var ComponentView = __webpack_require__(29);
 
 	    module.exports = ComponentView.extend({

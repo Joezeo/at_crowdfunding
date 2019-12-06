@@ -39,15 +39,17 @@
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
         <span style="color: red">${exception.message }</span>
         <div class="form-group has-success has-feedback">
-            <input type="text" name="loginacct" value="admin" class="form-control" id="inputSuccess4" placeholder="请输入登录账号" autofocus>
+            <input type="text" name="loginacct" value="admin" class="form-control" id="f_loginacct" placeholder="请输入登录账号" autofocus>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span id="acct_feedback" style="color: red;"></span>
         </div>
         <div class="form-group has-success has-feedback">
-            <input type="password" name="userpswd" value="123" class="form-control" id="inputSuccess4" placeholder="请输入登录密码" style="margin-top:10px;">
+            <input type="password" name="userpswd" value="123" class="form-control" id="f_userpswd" placeholder="请输入登录密码" style="margin-top:10px;">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span id="pwd_feedback" style="color: red;"></span>
         </div>
         <div class="form-group has-success has-feedback">
-            <select class="form-control" name="type" >
+            <select class="form-control" name="type" id="f_type">
                 <option value="member">会员</option>
                 <option value="user" selected>管理</option>
             </select>
@@ -64,15 +66,11 @@
                 <a href="reg.html">我要注册</a>
             </label>
         </div>
-        <a class="btn btn-lg btn-success btn-block" onclick="dologin()" > 登录</a>
+        <a class="btn btn-lg btn-success btn-block" id="form_login_button"> 登录</a>
     </form>
 </div>
 <script src="${APP_PATH }/jquery/jquery-2.1.1.min.js"></script>
 <script src="${APP_PATH }/bootstrap/js/bootstrap.min.js"></script>
-<script>
-    function dologin() {
-        $("#login_form").submit();
-    }
-</script>
+<script src="${APP_PATH }/js/login.js"></script>
 </body>
 </html>
