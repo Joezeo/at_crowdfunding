@@ -39,7 +39,7 @@
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
         <span style="color: red">${exception.message }</span>
         <div class="form-group has-success has-feedback">
-            <input type="text" name="loginacct" value="admin" class="form-control" id="f_loginacct" placeholder="请输入登录账号" autofocus>
+            <input type="text" name="loginacct" value="superAdmin" class="form-control" id="f_loginacct" placeholder="请输入登录账号" autofocus>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
             <span id="acct_feedback" style="color: red;"></span>
         </div>

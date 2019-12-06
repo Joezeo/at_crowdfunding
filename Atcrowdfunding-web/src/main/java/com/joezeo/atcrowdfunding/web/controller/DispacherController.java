@@ -39,6 +39,16 @@ public class DispacherController {
         return "main";
     }
 
+    @RequestMapping("/user")
+    public String htmUser(){
+        return "content/user";
+    }
+
+    @RequestMapping("panel")
+    public String htmPanel(){
+        return "content/panel";
+    }
+
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){

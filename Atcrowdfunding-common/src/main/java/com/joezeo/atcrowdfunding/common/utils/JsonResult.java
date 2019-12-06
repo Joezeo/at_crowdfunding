@@ -17,6 +17,11 @@ public class JsonResult{
         this.success = true;
     }
 
+    public JsonResult(Object data){
+        this.data = data;
+        this.success = true;
+    }
+
     public boolean isSuccess() {
         return success;
     }

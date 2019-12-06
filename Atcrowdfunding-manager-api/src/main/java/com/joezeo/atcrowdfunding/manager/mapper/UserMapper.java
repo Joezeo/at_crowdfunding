@@ -1,7 +1,9 @@
 package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.User;
+import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserMapper {
@@ -24,4 +26,19 @@ public interface UserMapper {
      * @return 查询到的User对象 或者 null
      */
     User selectByLoginInfo(Map<String,Object> loginInfo);
+
+    /**
+     * 分页查询t_user表用户信息
+     *
+     * @param pageInfo 分页对象
+     * @return List用户集合
+     */
+    List<User> selectByPage(PageInfo pageInfo);
+
+    /**
+     * 查询所有用户数据的条数
+     *
+     * @return 所有用户数据的条数
+     */
+    int selectUserCount();
 }
