@@ -38,6 +38,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
+<%--         在点击左侧项目后，会修改上部标题，并且绑定一个值groupId   --%>
+<%--          groupId:1:用户维护  --%>
             <div><a class="navbar-brand" id="navbar_title" style="font-size:32px;" href="#"></a></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">

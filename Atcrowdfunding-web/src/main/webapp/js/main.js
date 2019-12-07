@@ -15,6 +15,7 @@ function loadPanelPage() {
 // 内容区域加载user页面
 function loadUserPage() {
     $("#navbar_title").html("众筹平台 - 用户维护");
+    $("#navbar_title").data("groupId", 1);
     $("#content_div").load("user.htm?"+Math.random());
 
     return false;
