@@ -17,11 +17,11 @@ public class UserController {
 
     @RequestMapping("doPageQuery")
     @ResponseBody
-    public JsonResult doPageQuery(Integer pageNum, Integer pageSize){
+    public JsonResult doPageQuery(Integer pageNum, Integer pageSize, String loginAcct){
         JsonResult result = null;
 
         try{
-            PageInfo pageInfo = userService.queryUserByPage(pageNum, pageSize);
+            PageInfo pageInfo = userService.queryUserByPage(pageNum, pageSize, loginAcct);
             result = new JsonResult(pageInfo);
         } catch (Exception e){
             e.printStackTrace();

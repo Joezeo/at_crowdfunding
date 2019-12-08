@@ -26,13 +26,23 @@
     </select>
 
     <select id="selectByPage" resultType="user"
-            parameterType="com.joezeo.atcrowdfunding.common.utils.PageInfo">
+            parameterType="map">
         select * from t_user
-        limit #{startIndex},#{pageSize}
+        <where>
+            <if test="loginAcct!=null and loginAcct!=''">
+                loginAcct like concat("%",#{loginAcct},"%")
+            </if>
+        </where>
+        limit #{pageInfo.startIndex},#{pageInfo.pageSize}
     </select>
 
     <select id="selectUserCount" resultType="_int">
         select count(*) from t_user
+        <where>
+            <if test="loginAcct!=null and loginAcct!=''">
+                loginAcct like concat("%",#{loginAcct},"%")
+            </if>
+        </where>
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

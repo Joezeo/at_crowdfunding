@@ -24,10 +24,10 @@
             <div class="form-group has-feedback">
                 <div class="input-group">
                     <div class="input-group-addon">查询条件</div>
-                    <input class="form-control has-success" type="text" placeholder="请输入查询条件">
+                    <input id="search-condition" class="form-control has-success" type="text" placeholder="请输入查询条件">
                 </div>
             </div>
-            <button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
+            <button id="search-button" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
         </form>
         <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
                 class=" glyphicon glyphicon-remove"></i> 删除
@@ -63,6 +63,7 @@
 </div>
 
 <script src="${APP_PATH }/js/content/user.js"></script>
+<script src="${APP_PATH }/jquery/layer/layer.js"></script>
 </body>
 </html>
 

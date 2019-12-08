@@ -21,5 +21,13 @@ public interface UserService {
      * @param pageSize 每页显示数据条数
      * @return 分页信息对象PageInfo
      */
-    PageInfo queryUserByPage(Integer pageNum, Integer pageSize);
+    PageInfo queryUserByPage(Integer pageNum, Integer pageSize, String loginAcct);
+
+    /**
+     * 插入新的user账户
+     * tips：所有处理结果应当在service层处理，故没有返回值
+     *
+     * @param user
+     */
+    void insUser(User user);
 }

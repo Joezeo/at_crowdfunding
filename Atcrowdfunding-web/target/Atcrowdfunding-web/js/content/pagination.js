@@ -7,11 +7,18 @@ $(function () {
 
 function doQueryPage(pageNumFront) {
     var pageNum = 1;
-    if(pageNumFront)
-      pageNum = pageNumFront;
-
+    if(pageNumFront){
+        pageNum = pageNumFront;
+    }
     var pageSize = 10;
     var params = {pageNum: pageNum, pageSize: pageSize};
+
+    //获取搜搜条件 并去掉搜索条件的空格
+    var loginAcct = $("#search-condition").val().trim();
+    // 如果用户键入了搜索条件
+    if(loginAcct != ""){
+        params.loginAcct = loginAcct;
+    }
 
     var url = '';
     switch ($("#navbar_title").data("groupId")) {
@@ -70,17 +77,22 @@ function setPagination(pageInfo) {
     if(target == 1){
         content += "<li class='disabled'><a href='"+target+"'>上一页</a></li>";
     } else {
-        content += "<li><a href='#' onclick='doQueryPage()'>上一页</a></li>";
+        content += "<li><a onclick='doQueryPage("+(pageInfo.pageNum-1)+")'>上一页</a></li>";
     }
 
     for(var i=0; i<pageInfo.pageTotal; i++){
-        content += "<li><a onclick='doQueryPage("+(i+1)+")'>"+(i+1)+"</a></li>"
+        if(pageInfo.pageNum == i+1){
+            content += "<li class='active'><a onclick='doQueryPage("+(i+1)+")'>"+(i+1)+"</a></li>"
+        } else {
+            content += "<li><a onclick='doQueryPage("+(i+1)+")'>"+(i+1)+"</a></li>"
+        }
+
     }
     target = pageInfo.pageNum;
     if(target == pageInfo.pageTotal){
         content += "<li class='disabled'><a href='#'>下一页</a></li>";
     } else {
-        content += "<li><a href='#' onclick='doQueryPage()'>上一页</a></li>";
+        content += "<li><a onclick='doQueryPage("+(pageInfo.pageNum+1)+")'>下一页</a></li>";
     }
     $("#pagination").html(content);
 }
