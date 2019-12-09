@@ -33,6 +33,7 @@
                 loginAcct like concat("%",#{loginAcct},"%")
             </if>
         </where>
+        order by createtime desc
         limit #{pageInfo.startIndex},#{pageInfo.pageSize}
     </select>
 

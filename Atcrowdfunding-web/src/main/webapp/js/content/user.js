@@ -1,5 +1,6 @@
 $(function () {
     $("#search-button").click(doSearch);
+    $("#add-button").click(loadAddUserPage);
 });
 
 /**
@@ -15,4 +16,8 @@ function doSearch() {
     }
 
     doQueryPage();
+}
+
+function loadAddUserPage() {
+   $("#content_div").load("add.htm?t="+Math.random());
 }

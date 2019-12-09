@@ -1,5 +1,6 @@
 package com.joezeo.atcrowdfunding.manager.controller;
 
+import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.utils.JsonResult;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
@@ -23,6 +24,23 @@ public class UserController {
         try{
             PageInfo pageInfo = userService.queryUserByPage(pageNum, pageSize, loginAcct);
             result = new JsonResult(pageInfo);
+        } catch (Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+            return result;
+        }
+
+        return result;
+    }
+
+    @RequestMapping("doAddUser")
+    @ResponseBody
+    public JsonResult doAddUser(User user){
+        JsonResult result = null;
+
+        try{
+            userService.insUser(user);
+            result = new JsonResult("新增成功");
         } catch (Exception e){
             e.printStackTrace();
             result = new JsonResult(e);

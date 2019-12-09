@@ -7,7 +7,7 @@ $(function () {
 // 内容区域加载panel页面
 function loadPanelPage() {
     $("#navbar_title").html("众筹平台 - 控制面板");
-    $("#content_div").load("panel.htm?"+Math.random());
+    $("#content_div").load("panel.htm?t="+Math.random());
 
     return false;
 }
@@ -16,7 +16,7 @@ function loadPanelPage() {
 function loadUserPage() {
     $("#navbar_title").html("众筹平台 - 用户维护");
     $("#navbar_title").data("groupId", 1);
-    $("#content_div").load("user.htm?"+Math.random());
+    $("#content_div").load("user.htm?t="+Math.random());
 
     return false;
 }

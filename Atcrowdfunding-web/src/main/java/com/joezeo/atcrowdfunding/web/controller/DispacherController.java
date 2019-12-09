@@ -44,9 +44,14 @@ public class DispacherController {
         return "content/user";
     }
 
-    @RequestMapping("panel")
+    @RequestMapping("/panel")
     public String htmPanel(){
         return "content/panel";
+    }
+
+    @RequestMapping("/add")
+    public String htmAdd(){
+        return "content/add";
     }
 
     // 同步请求

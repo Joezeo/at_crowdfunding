@@ -60,7 +60,11 @@ function loadDataInTable(list) {
         content += "<td>" + list[i].loginacct + "</td>";
         content += "<td>" + list[i].username + "</td>";
         content += "<td>" + list[i].email + "</td>";
-        content += "<td>操作</td>";
+        content += "<td>\n" +
+            "\t\t\t\t      <button type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+            "\t\t\t\t      <button type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
+            "\t\t\t\t\t  <button type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
+            "\t\t\t\t  </td>";
         content += "</tr>";
     }
 
