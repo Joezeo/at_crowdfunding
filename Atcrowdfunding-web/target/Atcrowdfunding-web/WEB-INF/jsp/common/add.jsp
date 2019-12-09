@@ -41,6 +41,6 @@
         </form>
     </div>
 </div>
-<script src="${APP_PATH}/js/content/add.js"/>
+<script src="${APP_PATH}/js/common/add.js"/>
 </body>
 </html>

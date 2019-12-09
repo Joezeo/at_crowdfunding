@@ -107,17 +107,11 @@
             <if test="loginacct != null">
                 loginacct = #{loginacct,jdbcType=VARCHAR},
             </if>
-            <if test="userpswd != null">
-                userpswd = #{userpswd,jdbcType=CHAR},
-            </if>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 email = #{email,jdbcType=VARCHAR},
-            </if>
-            <if test="createtime != null">
-                createtime = #{createtime,jdbcType=CHAR},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
@@ -125,10 +119,8 @@
     <update id="updateByPrimaryKey" parameterType="com.joezeo.atcrowdfunding.bean.User">
     update t_user
     set loginacct = #{loginacct,jdbcType=VARCHAR},
-      userpswd = #{userpswd,jdbcType=CHAR},
       username = #{username,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      createtime = #{createtime,jdbcType=CHAR}
+      email = #{email,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

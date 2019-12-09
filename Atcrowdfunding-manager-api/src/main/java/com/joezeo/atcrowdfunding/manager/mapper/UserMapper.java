@@ -1,7 +1,6 @@
 package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.User;
-import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -6,6 +6,7 @@ import com.joezeo.atcrowdfunding.common.exception.LoginServiceException;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
+import com.joezeo.atcrowdfunding.common.utils.StringUtil;
 import com.joezeo.atcrowdfunding.manager.mapper.UserMapper;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,4 +96,30 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException("添加用户异常");
         }
     }
+
+    public void updUser(User user) {
+        if(user == null){
+            throw new ServiceException("修改：传入的用户信息为空");
+        }
+
+        int index = userMapper.updateByPrimaryKey(user);
+
+        if(index != 1){
+            throw new ServiceException("修改用户信息错误");
+        }
+    }
+
+    public User queryById(Integer id) {
+        if(id == null || id <= 0){
+            throw new ServiceException("查询用户信息的id错误，id="+id);
+        }
+
+        User user = userMapper.selectByPrimaryKey(id);
+
+        if(user == null){
+            throw new ServiceException("查询用户信息异常，请重试");
+        }
+        return user;
+    }
+
 }

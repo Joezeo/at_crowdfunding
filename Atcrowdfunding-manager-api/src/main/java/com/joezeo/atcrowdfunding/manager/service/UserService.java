@@ -30,4 +30,17 @@ public interface UserService {
      * @param user
      */
     void insUser(User user);
+
+    /**
+     * 修改用户信息
+     * @param user 需要修改的用户信息
+     */
+    void updUser(User user);
+
+    /**
+     * 根据主键id查询用户信息
+     * @param id 主键id
+     * @return 查询到的用户信息
+     */
+    User queryById(Integer id);
 }

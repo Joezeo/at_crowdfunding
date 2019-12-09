@@ -20,7 +20,9 @@ function doAddUser() {
 
    var params = {loginacct:loginAcct, username:username, email:email};
 
-   validData();
+   if(validData()){
+      return false;
+   }
    $.ajax({
       url:'/user/doAddUser.do',
       data: params,
@@ -28,7 +30,6 @@ function doAddUser() {
       type: 'post',
       success: function (jsonResult) {
         if(jsonResult.success) {
-           alert("success");
            $("#content_div").load("user.htm?t="+Math.random());
         } else {
            alert(jsonResult.message);
@@ -40,6 +41,7 @@ function doAddUser() {
 // 检查文本框内的内容是否为空
 function validData() {
    if($("#f_loginAcct").val() == "" || $("#f_username").val() == "" || $("#f_email").val() == ""){
-      alert("以上内容不允许有空白，请检查后再次添加！")
+      alert("以上内容不允许有空白，请检查后再次添加！");
+      return true;
    }
 }

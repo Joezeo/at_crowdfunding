@@ -25,6 +25,6 @@
     </td>
 </tr>
 
-<script src="${APP_PATH }/js/content/pagination.js"></script>
+<script src="${APP_PATH }/js/common/pagination.js"></script>
 </body>
 </html>

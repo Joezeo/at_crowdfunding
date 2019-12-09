@@ -16,6 +16,7 @@ function loadPanelPage() {
 function loadUserPage() {
     $("#navbar_title").html("众筹平台 - 用户维护");
     $("#navbar_title").data("groupId", 1);
+    $("#content_div").removeData("pageNum");
     $("#content_div").load("user.htm?t="+Math.random());
 
     return false;

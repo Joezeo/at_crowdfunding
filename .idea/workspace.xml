@@ -7,13 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4345e248-094d-40b6-8d87-8d65b657bc00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/add.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/user/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/common/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/common/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/user/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/constant/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/constant/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-common/target/classes/com/joezeo/atcrowdfunding/common/constant/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-common/target/classes/com/joezeo/atcrowdfunding/common/constant/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-api/target/classes/com/joezeo/atcrowdfunding/manager/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-api/target/classes/com/joezeo/atcrowdfunding/manager/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml" afterDir="false" />
@@ -21,16 +24,24 @@
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/target/classes/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/target/classes/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/target/classes/mybatis/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-manager-impl/target/classes/mybatis/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/common/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/pagination.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/panel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/panel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/user/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/common/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/common/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/user.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/classes/com/joezeo/atcrowdfunding/web/controller/DispacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/classes/com/joezeo/atcrowdfunding/web/controller/DispacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/common/pagination.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/panel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/common/panel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/jsp/content/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/user/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-manager-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-manager-api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-manager-impl-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/WEB-INF/lib/Atcrowdfunding-manager-impl-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/content/user.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/Atcrowdfunding-web/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Atcrowdfunding-web/target/classes/com/joezeo/atcrowdfunding/web/controller/DispacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Atcrowdfunding-web/target/classes/com/joezeo/atcrowdfunding/web/controller/DispacherController.class" afterDir="false" />
     </list>
@@ -68,74 +79,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/utils/JsonResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/add.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/add.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,6 +97,8 @@
       <find>selectByPage</find>
       <find>setpagination</find>
       <find>page</find>
+      <find />
+      <find>updateByPrimaryKey</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,16 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/listener/StartSystemListener.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/reg.jsp" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/Mybatis-MBG/src/mybatis-mbg.xml" />
-        <option value="$PROJECT_DIR$/mybatis-MBG/pom.xml" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-bean/src/main/java/com/joezeo/atcrowdfunding/bean/Dictionary.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/TypeMapper.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/AccountTypeCertMapper.java" />
-        <option value="$PROJECT_DIR$/mybatis-MBG/src/mybatis-mbg.xml" />
         <option value="$PROJECT_DIR$/mybatis-MBG/src/main/java/com/joezeo/atcrowdfunding/manager/resources/UserMapper.xml" />
         <option value="$PROJECT_DIR$/mybatis-MBG/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/resources/mybatis/mybatis-config.xml" />
@@ -196,22 +132,32 @@
         <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/test/java/com/joezeo/atcrowdfunding/manager/service/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/resources/spring/spring-context.xml" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/test/java/com/joezeo/atcrowdfunding/manager/service/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java" />
-        <option value="$USER_HOME$/.ideavimrc" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/pagination.js" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/constant/Const.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/user.jsp" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/user.js" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/add.jsp" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/login.js" />
-        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/add.js" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/add.jsp" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/pagination.jsp" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/add.js" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/user/user.jsp" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/edit.js.jsp" />
+        <option value="$USER_HOME$/.ideavimrc" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/edit.jsp" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/t.js" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/pagination.js" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/user/user.js" />
         <option value="$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/edit.js" />
       </list>
     </option>
   </component>
@@ -242,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,47 +200,47 @@
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
-              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-common" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
@@ -320,6 +267,35 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-manager-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
@@ -332,15 +308,6 @@
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
               <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
-              <item name="Atcrowdfunding-manager-impl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
-              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
               <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -355,6 +322,33 @@
               <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
@@ -373,11 +367,71 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="At-crowdfunding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="At-crowdfunding" type="462c0819:PsiDirectoryNode" />
+              <item name="Atcrowdfunding-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,19 +445,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\jquery\layer" />
-      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\WEB-INF\jsp\content" />
-      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\WEB-INF\jsp" />
-      <recent name="F:\workspace\IDEA项目\At-crowdfunding\mybatis-MBG\src" />
-      <recent name="F:\workspace\IDEA项目\At-crowdfunding\mybatis-MBG\src\main\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\jquery" />
       <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-manager-impl\src\main\resources\mybatis" />
       <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-manager-api\src\main\java\com\joezeo\atcrowdfunding\manager\mapper" />
       <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-bean\src\main\java\com\joezeo\atcrowdfunding\bean" />
       <recent name="F:\workspace\IDEA项目\At-crowdfunding\mybatis-MBG\src\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\WEB-INF\jsp\content" />
+      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\js\common" />
+      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\js\user" />
+      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\WEB-INF\jsp\user" />
+      <recent name="F:\workspace\IDEA项目\At-crowdfunding\Atcrowdfunding-web\src\main\webapp\WEB-INF\jsp\page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -564,7 +618,8 @@
       <workItem from="1575863728801" duration="2540000" />
       <workItem from="1575866391223" duration="463000" />
       <workItem from="1575866897597" duration="706000" />
-      <workItem from="1575867654891" duration="8645000" />
+      <workItem from="1575867654891" duration="15835000" />
+      <workItem from="1575890699519" duration="6209000" />
     </task>
     <task id="LOCAL-00001" summary="Set up the distributed module and complete the pom dependency between modules">
       <created>1575187893404</created>
@@ -643,7 +698,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575812658083</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完成用户数据操作：新增用户">
+      <created>1575879091125</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575879091125</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -670,12 +732,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95579000" />
+    <option name="totallyTimeSpent" value="108978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49473685" visible="true" weight="0.17292225" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49473685" visible="true" weight="0.17426273" />
       <window_info id="Structure" order="1" sideWeight="0.50526315" side_tool="true" weight="0.23927614" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -764,29 +826,10 @@
     <MESSAGE value="增加公共分页导航条pagination.js:所有需要分页查询的页面都需要导入pagination.jsp,pagination.jsp包含pagination.js" />
     <MESSAGE value="增加公共分页导航条pagination:所有需要分页查询的页面都需要导入pagination.jsp,pagination.jsp包含pagination.js" />
     <MESSAGE value="t_user表插入测试数据，完成模糊查询功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="t_user表插入测试数据，完成模糊查询功能" />
+    <MESSAGE value="完成用户数据操作：新增用户" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成用户数据操作：新增用户" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/ProjectTagMapper.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/MessageMapper.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/AdvertisementMapper.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/AccountTypeCertMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mybatis-MBG/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mybatis-MBG/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java" />
     <entry file="file://$PROJECT_DIR$/mybatis-MBG/src/main/java/com/joezeo/atcrowdfunding/manager/resources/UserMapper.xml" />
     <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/resources/mybatis/mybatis-config.xml">
@@ -833,13 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/utils/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Windows/System32/Ablog/source/_posts/Github：git-clone速度缓慢的解决方法.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -873,13 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/panel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -945,93 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/pagination.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.ideavimrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/constant/Const.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="85" column="33" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1664#1680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding>
-            <element signature="method#doLogin#0;class#DispacherController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -1063,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/utils/JsonResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1077,34 +1016,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/content/add.jsp">
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-common/src/main/java/com/joezeo/atcrowdfunding/common/utils/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/panel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/pagination.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2196">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../编程/项目/众筹网站/ssm项目-众筹/atcrowdfunding课件/docs/课件/尚筹网页面原型/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/user/user.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/java/com/joezeo/atcrowdfunding/web/controller/DispacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+          <folding>
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="method#doLogin#0;class#DispacherController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/edit.js.jsp" />
+    <entry file="file://$USER_HOME$/.ideavimrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-api/src/main/java/com/joezeo/atcrowdfunding/manager/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/content/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/java/com/joezeo/atcrowdfunding/manager/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="172">
+          <caret line="91" column="16" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/t.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/pagination.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1558">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="n#!!doc;n#setPagination#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/user/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/WEB-INF/jsp/common/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-web/src/main/webapp/js/common/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Atcrowdfunding-manager-impl/src/main/resources/mybatis/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="122" column="38" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
         </state>
       </provider>
     </entry>

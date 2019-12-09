@@ -38,7 +38,7 @@
         <br>
         <hr style="clear:both;">
         <div class="table-responsive">
-            <table class="table  table-bordered">
+            <table class="table  table-bordered" id="main-table">
                 <thead>
                 <tr>
                     <th width="30"></th>
@@ -54,7 +54,7 @@
                 </tbody>
                 <tfoot>
 
-                <%@include file="pagination.jsp"%>
+                <%@include file="../common/pagination.jsp"%>
 <%--                    <jsp:include page="pagination.jsp"></jsp:include>--%>
                 </tfoot>
             </table>
@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<script src="${APP_PATH }/js/content/user.js"></script>
+<script src="${APP_PATH }/js/user/user.js"></script>
 <script src="${APP_PATH }/jquery/layer/layer.js"></script>
 </body>
 </html>
