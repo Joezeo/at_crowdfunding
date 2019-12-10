@@ -43,4 +43,12 @@ public interface UserService {
      * @return 查询到的用户信息
      */
     User queryById(Integer id);
+
+    /**
+     * 根据主键id进行用户删除
+     * @param id 主键id
+     */
+    void deleteById(Integer id);
+
+    void deleteUserBatch(String ids);
 }

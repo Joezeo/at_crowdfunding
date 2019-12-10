@@ -20,7 +20,7 @@ function doQueryPage() {
     var url = '';
     switch ($("#navbar_title").data("groupId")) {
         case 1: // 点击用户维护
-            url = '/user/doPageQuery.do';
+            url = '/user/doPageQuery.do?t='+Math.random();
             break;
     }
 
@@ -40,9 +40,7 @@ function doQueryPage() {
                 //设置pagination分页导航条
                 setPagination(jsonResult.data);
             } else {
-                layer.msg(jsonResult.message, {time: 1000, icon: 5, shift: 1}, function () {
-
-                })
+                alert(jsonResult.message);
             }
         }
     });
@@ -54,14 +52,14 @@ function loadDataInTable(list) {
     var content = "";
 
     for (var i = 0; i < list.length; i++) {
-        content += "<tr>";
+        content += "<tr userId='" + list[i].id + "'>";
         content += "<td>" + (i + 1) + "</td>";
         content += "<td><input type='checkbox'></td>";
         content += "<td>" + list[i].loginacct + "</td>";
         content += "<td>" + list[i].username + "</td>";
         content += "<td>" + list[i].email + "</td>";
         //为了方便 我们把用户的id绑定在当前按钮的td上
-        content += "<td userId='" + list[i].id + "'>\n" +
+        content += "<td >\n" +
             "\t\t\t\t      <button id='table-check' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
             "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
             "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +

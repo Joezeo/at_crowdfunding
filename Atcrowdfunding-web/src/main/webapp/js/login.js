@@ -25,6 +25,7 @@ function doLogin() {
                 $("#acct_feedback").html("");
                 $("#pwd_feedback").html("");
                 // layer.msg(result.message, {time:1000, icon:5, shift:6}, null);
+
                 layer.msg(result.message, {time:1000, icon:5, shift:1}, function () {
                     $('#f_loginacct').val("");
                     $('#f_userpswd').val("");

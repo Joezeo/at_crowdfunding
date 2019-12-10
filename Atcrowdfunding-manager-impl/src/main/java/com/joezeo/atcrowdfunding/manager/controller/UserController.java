@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.ResultSet;
 
 @Controller
 @RequestMapping("/user/")
@@ -96,6 +95,40 @@ public class UserController {
         try{
            User user = userService.queryById(id);
            result = new JsonResult(user) ;
+        } catch (Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+            return result;
+        }
+
+        return result;
+    }
+
+    @RequestMapping("doDeleteUser")
+    @ResponseBody
+    public JsonResult doDeleteUser(Integer id){
+        JsonResult result = null;
+
+        try{
+            userService.deleteById(id);
+            result = new JsonResult("删除用户成功~");
+        } catch (Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+            return result;
+        }
+
+        return result;
+    }
+
+    @RequestMapping("doDeleteUserBatch")
+    @ResponseBody
+    public JsonResult doDeleteUserBatch(String ids){
+        JsonResult result = null;
+
+        try{
+            userService.deleteUserBatch(ids);
+            result = new JsonResult("删除成功");
         } catch (Exception e){
             e.printStackTrace();
             result = new JsonResult(e);

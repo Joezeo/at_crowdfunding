@@ -8,8 +8,17 @@ $(function () {
     // 点击新增按钮
     $("#add-button").click(loadAddUserPage);
 
+    // 点击全选selectBox
+    $("#select-all").click(selectAll);
+
+    // 点击删除按钮
+    $("#user-delete-button").click(doDeleteUserBatch);
+
     // 点击表格中的修改按钮
     $("#main-table").on("click", "#table-modify", loadEditPage);
+
+    // 点击表格中的删除按钮
+    $("#main-table").on("click", "#table-remove", doDeleteUser);
 });
 
 /**
@@ -40,13 +49,13 @@ function loadAddUserPage() {
 function loadEditPage() {
     $("#content_div").load("edit.htm?t=" + Math.random());
 
-    var id = $(this).parent().attr("userId");
+    var id = $(this).parent().parent().attr("userId");
 
     // 加上了 alert 就执行成功，不加就失败
     // 这种情况一般出现在 alert() 之后的某个代码需要页面元素进入一定的状态才能使用，
     // 加上 alert() 之后，相当于页面元素有足够的时间进入一定的状态了，如果确定你的代码没有问题，
     // 你可以把 alert() 之后的代码放到一个 setTimeout 的函数中，也就是停一会再运行下面的代码，
-    setTimeout(doAjax,5, id);
+    setTimeout(doAjax, 10, id);
 }
 
 function doAjax(id) {
@@ -76,3 +85,71 @@ function fillDataInEdit(user) {
     $("#edit-username").val(user.username);
     $("#edit-id").val(user.id);
 }
+
+/**
+ * 执行删除单行用户
+ */
+function doDeleteUser() {
+    var res = confirm("您确定要删除该行数据么？");
+    if(!res){
+        return false;
+    }
+    var id = $(this).parent().parent().attr("userId");
+
+    $.ajax({
+        url: '/user/doDeleteUser.do',
+        data: {id: id},
+        dataType: 'json',
+        type: 'post',
+        success: function (jsonResult) {
+            if (jsonResult.success) {
+                alert("删除成功~");
+
+                //重新执行分页查询刷新数据
+                $("#content_div").data("pageNum", 1); // 把pageNum设置为1
+                doQueryPage();
+            } else {
+                alert(jsonResult.message);
+            }
+        }
+    })
+}
+
+function selectAll() {
+   var checkedStatus = $("#select-all").prop("checked");
+   $("#table_body :input[type='checkbox']").prop("checked", checkedStatus);
+}
+
+function doDeleteUserBatch() {
+    // 获取所有选中的单选框， id是绑定在tr上的，即绑定在单选框的parent()上
+    var boxs = $("#table_body :input:checked");
+    var ids = "";
+    boxs.each(function () {
+        var id = $(this).parent().parent().attr("userId");
+        if(ids == ""){
+            ids += "id="+id;
+        } else {
+            ids += "&id="+id;
+        }
+    });
+
+    if(ids==""){
+        return false;
+    }
+
+    $.ajax({
+        url: '/user/doDeleteUserBatch.do',
+        data: {ids: ids},
+        dataType: 'json',
+        type: 'post',
+        success: function (jsonResult) {
+            if(jsonResult.success){
+                alert("删除成功");
+                doQueryPage();
+            } else {
+                alert(jsonResult.message);
+            }
+        }
+    })
+}
+

@@ -6,22 +6,19 @@ import com.joezeo.atcrowdfunding.common.exception.LoginServiceException;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
-import com.joezeo.atcrowdfunding.common.utils.StringUtil;
 import com.joezeo.atcrowdfunding.manager.mapper.UserMapper;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     public User queryLogin(Map<String, Object> loginInfo) {
@@ -120,6 +117,35 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException("查询用户信息异常，请重试");
         }
         return user;
+    }
+
+    public void deleteById(Integer id) {
+        if(id == null || id <=0 ){
+            throw new ServiceException("待删除用户id错误，id="+id);
+        }
+
+        int index = userMapper.deleteByPrimaryKey(id);
+
+        if(index != 1){
+            throw new ServiceException("删除用户失败~");
+        }
+    }
+
+    public void deleteUserBatch(String ids) {
+        if(ids == null || ids == ""){
+            throw new ServiceException("传入的id数组不可为空！！");
+        }
+        List<Integer> idList = new ArrayList<Integer>();
+
+        String[] arr = ids.split("&");
+        for(String idKV : arr){
+            String[] tmp = idKV.split("=");
+            idList.add(Integer.parseInt(tmp[1]));
+        }
+
+        for(Integer id : idList){
+            deleteById(id);
+        }
     }
 
 }

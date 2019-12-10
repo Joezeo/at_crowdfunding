@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body style="height: 100%;">
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -29,7 +29,7 @@
             </div>
             <button id="search-button" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
         </form>
-        <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
+        <button id="user-delete-button" type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
                 class=" glyphicon glyphicon-remove"></i> 删除
         </button>
         <button type="button" class="btn btn-primary" style="float:right;"
@@ -42,7 +42,7 @@
                 <thead>
                 <tr>
                     <th width="30"></th>
-                    <th width="30"><input type="checkbox"></th>
+                    <th width="30"><input id="select-all" type="checkbox"></th>
                     <th>账号</th>
                     <th>名称</th>
                     <th>邮箱地址</th>
@@ -63,7 +63,6 @@
 </div>
 
 <script src="${APP_PATH }/js/user/user.js"></script>
-<script src="${APP_PATH }/jquery/layer/layer.js"></script>
 </body>
 </html>
 

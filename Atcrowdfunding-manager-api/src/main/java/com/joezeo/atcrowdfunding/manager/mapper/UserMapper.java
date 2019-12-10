@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserMapper {
+    // 根据主键id进行删除
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

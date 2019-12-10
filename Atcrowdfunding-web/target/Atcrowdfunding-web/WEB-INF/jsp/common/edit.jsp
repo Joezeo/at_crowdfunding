@@ -23,7 +23,7 @@
         <form role="form">
 
 <%--            需要从数据库重新查询当前用户 避免脏数据--%>
-
+            <input type="hidden" id="edit-id" />
             <div class="form-group">
                 <label for="edit-loginacct">登陆账号</label>
                 <input type="text" class="form-control" id="edit-loginacct" value="test">

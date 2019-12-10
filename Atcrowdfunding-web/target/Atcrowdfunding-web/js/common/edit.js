@@ -18,7 +18,7 @@ function doModify() {
     var loginacct = $("#edit-loginacct").val();
     var email = $("#edit-email").val();
     var username = $("#edit-username").val();
-    var id = $("#content_div").data("id");
+    var id = $("#edit-id").val();
 
     var params = {loginacct: loginacct, email: email, username: username, id:id};
     $.ajax({
