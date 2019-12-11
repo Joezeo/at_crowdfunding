@@ -68,4 +68,9 @@
       roleid = #{roleid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectRoleIdsByUserId" resultType="integer">
+    select roleid from t_user_role
+    where userid = #{userId}
+  </select>
 </mapper>

@@ -19,6 +19,9 @@ $(function () {
 
     // 点击表格中的删除按钮
     $("#main-table").on("click", "#table-remove", doDeleteUser);
+
+    // 点击表格中的分配角色按钮
+    $("#main-table").on("click", "#table-assignRole", loadAssignPage);
 });
 
 /**
@@ -29,9 +32,7 @@ function doSearch() {
     var loginAcct = $("#search-condition").val().trim();
 
     // 如果没有输入任何值或者输入了空格 将输入框重置
-    if (loginAcct == "") {
-        $("#search-condition").val("");
-    }
+    $("#search-condition").val(loginAcct);
 
     doQueryPage();
 }
@@ -55,7 +56,7 @@ function loadEditPage() {
     // 这种情况一般出现在 alert() 之后的某个代码需要页面元素进入一定的状态才能使用，
     // 加上 alert() 之后，相当于页面元素有足够的时间进入一定的状态了，如果确定你的代码没有问题，
     // 你可以把 alert() 之后的代码放到一个 setTimeout 的函数中，也就是停一会再运行下面的代码，
-    setTimeout(doAjax, 10, id);
+    setTimeout(doAjax, 100, id);
 }
 
 function doAjax(id) {
@@ -91,7 +92,7 @@ function fillDataInEdit(user) {
  */
 function doDeleteUser() {
     var res = confirm("您确定要删除该行数据么？");
-    if(!res){
+    if (!res) {
         return false;
     }
     var id = $(this).parent().parent().attr("userId");
@@ -116,35 +117,39 @@ function doDeleteUser() {
 }
 
 function selectAll() {
-   var checkedStatus = $("#select-all").prop("checked");
-   $("#table_body :input[type='checkbox']").prop("checked", checkedStatus);
+    var checkedStatus = $("#select-all").prop("checked");
+    $("#table_body :input[type='checkbox']").prop("checked", checkedStatus);
 }
 
 function doDeleteUserBatch() {
+    var res = confirm("您确定要删除这些数据么？");
+    if (!res) {
+        return false;
+    }
+
     // 获取所有选中的单选框， id是绑定在tr上的，即绑定在单选框的parent()上
     var boxs = $("#table_body :input:checked");
     var ids = "";
     boxs.each(function () {
         var id = $(this).parent().parent().attr("userId");
-        if(ids == ""){
-            ids += "id="+id;
+        if (ids == "") {
+            ids += "id=" + id;
         } else {
-            ids += "&id="+id;
+            ids += "&id=" + id;
         }
-    })
+    });
 
-    if(ids==""){
+    if (ids == "") {
         return false;
     }
 
-    alert(ids);
     $.ajax({
         url: '/user/doDeleteUserBatch.do',
         data: {ids: ids},
         dataType: 'json',
         type: 'post',
         success: function (jsonResult) {
-            if(jsonResult.success){
+            if (jsonResult.success) {
                 alert("删除成功");
                 doQueryPage();
             } else {
@@ -154,3 +159,12 @@ function doDeleteUserBatch() {
     })
 }
 
+function loadAssignPage() {
+    var id = $(this).parent().parent().attr("userId");
+    $("#content_div").load("/assignRole.htm?t="+Math.random());
+
+    // 似乎每次在获取了attr属性都需要setTimeOut?
+    setTimeout(function (id) {
+        loadUserRoles(id);
+    },100, id);
+}

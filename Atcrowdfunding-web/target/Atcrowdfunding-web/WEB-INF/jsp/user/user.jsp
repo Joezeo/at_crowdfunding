@@ -63,6 +63,7 @@
 </div>
 
 <script src="${APP_PATH }/js/user/user.js"></script>
+<script src="${APP_PATH }/js/user/assignRole.js"></script>
 </body>
 </html>
 

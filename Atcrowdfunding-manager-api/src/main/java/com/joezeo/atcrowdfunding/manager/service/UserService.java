@@ -50,5 +50,19 @@ public interface UserService {
      */
     void deleteById(Integer id);
 
+    /**
+     * 批量删除用户
+     * @param ids 需要删除的用户id
+     */
     void deleteUserBatch(String ids);
+
+    /**
+     * 根据用户id查询该用户的角色分配信息
+     * 分别将已经分配的角色信息和未分配的角色信息放入不同的list中
+     * 然后保存在map集合中
+     *
+     * @param userId 用户id
+     * @return
+     */
+    Map<String, Object> queryRolesByUsrid(Integer userId);
 }

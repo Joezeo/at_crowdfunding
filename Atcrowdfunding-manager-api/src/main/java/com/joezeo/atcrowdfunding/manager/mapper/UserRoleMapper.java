@@ -2,6 +2,8 @@ package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.UserRole;
 
+import java.util.List;
+
 public interface UserRoleMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface UserRoleMapper {
     int updateByPrimaryKeySelective(UserRole record);
 
     int updateByPrimaryKey(UserRole record);
+
+    List<Integer> selectRoleIdsByUserId(Integer userId);
 }

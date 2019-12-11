@@ -55,4 +55,8 @@
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAllRoles" resultType="Role">
+    select * from t_role
+  </select>
 </mapper>

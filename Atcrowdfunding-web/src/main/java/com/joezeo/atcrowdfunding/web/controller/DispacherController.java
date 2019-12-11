@@ -40,25 +40,34 @@ public class DispacherController {
     }
 
     @RequestMapping("/user")
-    public String htmUser(){
+    public String htmUser() {
         return "user/user";
     }
 
     @RequestMapping("/panel")
-    public String htmPanel(){
+    public String htmPanel() {
         return "common/panel";
     }
 
     @RequestMapping("/add")
-    public String htmAdd(){
+    public String htmAdd() {
         return "common/add";
     }
 
     @RequestMapping("/edit")
-    public String htmEdit(){
+    public String htmEdit() {
         return "common/edit";
     }
 
+    @RequestMapping("/role")
+    public String hrmRole() {
+        return "role/role";
+    }
+
+    @RequestMapping("/assignRole")
+    public String htmAssignRole(){
+        return "user/assignRole";
+    }
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){
@@ -97,7 +106,7 @@ public class DispacherController {
     }
 
     @RequestMapping("/doLogout")
-    public String doLogout(HttpSession session){
+    public String doLogout(HttpSession session) {
         session.removeAttribute(Const.LOGIN_USER);
         return "redirect:index.htm";
     }

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 
 @Controller
 @RequestMapping("/user/")
@@ -129,6 +131,23 @@ public class UserController {
         try{
             userService.deleteUserBatch(ids);
             result = new JsonResult("删除成功");
+        } catch (Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+            return result;
+        }
+
+        return result;
+    }
+
+    @RequestMapping("doGetUserRoles")
+    @ResponseBody
+    public JsonResult doGetUserRoles(Integer userId){
+        JsonResult result = null;
+
+        try{
+            Map<String, Object> map = userService.queryRolesByUsrid(userId);
+            result = new JsonResult(map);
         } catch (Exception e){
             e.printStackTrace();
             result = new JsonResult(e);

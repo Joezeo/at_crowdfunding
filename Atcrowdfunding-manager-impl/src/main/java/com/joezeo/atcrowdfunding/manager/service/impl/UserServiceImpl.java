@@ -1,14 +1,16 @@
 package com.joezeo.atcrowdfunding.manager.service.impl;
 
+import com.joezeo.atcrowdfunding.bean.Role;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.constant.Const;
 import com.joezeo.atcrowdfunding.common.exception.LoginServiceException;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
+import com.joezeo.atcrowdfunding.manager.mapper.RoleMapper;
 import com.joezeo.atcrowdfunding.manager.mapper.UserMapper;
+import com.joezeo.atcrowdfunding.manager.mapper.UserRoleMapper;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,6 +22,12 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private RoleMapper roleMapper;
+
+    @Resource
+    private UserRoleMapper userRoleMapper;
 
     public User queryLogin(Map<String, Object> loginInfo) {
         if (loginInfo == null) {
@@ -146,6 +154,40 @@ public class UserServiceImpl implements UserService {
         for(Integer id : idList){
             deleteById(id);
         }
+    }
+
+    public Map<String, Object> queryRolesByUsrid(Integer userId) {
+        if(userId == null || userId<=0){
+            throw new ServiceException("传入的用户id异常，id="+userId);
+        }
+
+        List<Role> allRoles = roleMapper.selectAllRoles();
+        List<Integer> assignedRoleIds = userRoleMapper.selectRoleIdsByUserId(userId);
+
+        if(allRoles == null){
+            throw new ServiceException("获取所有角色信息异常~");
+        }
+        if(assignedRoleIds == null){
+            throw new ServiceException("获取已分配角色id异常~");
+        }
+
+        List<Role> leftRoleList = new ArrayList<Role>(); // 左边，未分配的角色列表
+        List<Role> rightRoleList = new ArrayList<Role>(); // 右边，已分配的角色列表
+
+        for(Role role : allRoles){
+            if(assignedRoleIds.contains(role.getId())){
+                // 该角色已被分配
+                rightRoleList.add(role);
+            } else {
+                leftRoleList.add(role);
+            }
+        }
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("leftRoleList", leftRoleList);
+        map.put("rightRoleList",rightRoleList);
+
+        return map;
     }
 
 }

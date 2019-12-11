@@ -10,17 +10,18 @@ function doQueryPage() {
     var pageSize = 10;
     var params = {pageNum: pageNum, pageSize: pageSize};
 
-    //获取搜搜条件 并去掉搜索条件的空格
-    var loginAcct = $("#search-condition").val().trim();
-    // 如果用户键入了搜索条件
-    if (loginAcct != "") {
-        params.loginAcct = loginAcct;
-    }
 
     var url = '';
     switch ($("#navbar_title").data("groupId")) {
         case 1: // 点击用户维护
             url = '/user/doPageQuery.do?t='+Math.random();
+
+            //获取搜搜条件 并去掉搜索条件的空格
+            var loginAcct = $("#search-condition").val().trim();
+            // 如果用户键入了搜索条件
+            if (loginAcct != "") {
+                params.loginAcct = loginAcct;
+            }
             break;
     }
 
@@ -58,9 +59,8 @@ function loadDataInTable(list) {
         content += "<td>" + list[i].loginacct + "</td>";
         content += "<td>" + list[i].username + "</td>";
         content += "<td>" + list[i].email + "</td>";
-        //为了方便 我们把用户的id绑定在当前按钮的td上
         content += "<td >\n" +
-            "\t\t\t\t      <button id='table-check' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+            "\t\t\t\t      <button id='table-assignRole' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
             "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
             "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
             "\t\t\t\t  </td>";
@@ -74,7 +74,9 @@ function reloadUserPage(pageNum) {
     // 将pageNum绑定在content_div上
     $("#content_div").data("pageNum", pageNum);
 
-    $("#content_div").load("user.htm?t=" + Math.random());
+    // $("#content_div").load("user.htm?t=" + Math.random()); //这样操作会清空搜索框里的搜索信息
+
+    doQueryPage();
 }
 
 /**
