@@ -73,4 +73,23 @@
     select roleid from t_user_role
     where userid = #{userId}
   </select>
+
+  <insert id="insertRelationship">
+    insert into t_user_role
+    values
+    <foreach collection="roleids" item="roleid" separator=",">
+      (
+      default, #{userid}, #{roleid}
+      )
+    </foreach>
+  </insert>
+
+  <delete id="deleteRelationship">
+    delete from t_user_role
+    where userid=#{userid}
+    and roleid in
+    <foreach collection="roleids" item="roleid" separator="," open="(" close=")">
+      #{roleid}
+    </foreach>
+  </delete>
 </mapper>

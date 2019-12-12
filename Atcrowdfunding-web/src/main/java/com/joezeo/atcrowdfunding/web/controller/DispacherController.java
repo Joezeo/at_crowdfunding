@@ -2,7 +2,7 @@ package com.joezeo.atcrowdfunding.web.controller;
 
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.constant.Const;
-import com.joezeo.atcrowdfunding.common.utils.JsonResult;
+import com.joezeo.atcrowdfunding.common.vo.JsonResult;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

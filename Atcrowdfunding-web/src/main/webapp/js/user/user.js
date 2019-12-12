@@ -166,5 +166,5 @@ function loadAssignPage() {
     // 似乎每次在获取了attr属性都需要setTimeOut?
     setTimeout(function (id) {
         loadUserRoles(id);
-    },100, id);
+    },500, id);
 }

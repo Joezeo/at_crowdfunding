@@ -11,6 +11,7 @@
     <title>错误页面 ERROR</title>
 </head>
 <body>
+    ${exception.message}
     ERROR！！
 </body>
 </html>

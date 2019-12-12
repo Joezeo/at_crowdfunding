@@ -28,9 +28,15 @@
             </div>
             <div class="form-group">
                 <ul>
-                    <li id="left-right-btn" class="btn btn-default glyphicon glyphicon-chevron-right"></li>
+                    <li id="left-right-btn" class="btn btn-default glyphicon glyphicon-chevron-right"> 添加</li>
                     <br>
-                    <li id="right-left-btn" class="btn btn-default glyphicon glyphicon-chevron-left" style="margin-top:20px;"></li>
+                    <li id="right-left-btn" class="btn btn-default glyphicon glyphicon-chevron-left" style="margin-top:20px;"> 删除</li>
+
+                    <br>
+                    <li id="left-right-all-btn" class="btn btn-default glyphicon glyphicon-forward" style="margin-top:20px;"> 添加所有</li>
+
+                    <br>
+                    <li id="right-left-all-btn" class="btn btn-default glyphicon glyphicon-backward" style="margin-top:20px;"> 删除所有</li>
                 </ul>
             </div>
             <div class="form-group" style="margin-left:40px;">

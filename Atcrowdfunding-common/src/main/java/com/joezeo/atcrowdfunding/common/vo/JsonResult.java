@@ -1,4 +1,4 @@
-package com.joezeo.atcrowdfunding.common.utils;
+package com.joezeo.atcrowdfunding.common.vo;
 
 
 public class JsonResult{
