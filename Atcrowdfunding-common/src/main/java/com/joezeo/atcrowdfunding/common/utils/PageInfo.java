@@ -3,11 +3,11 @@ package com.joezeo.atcrowdfunding.common.utils;
 import java.util.List;
 
 public class PageInfo {
-    private Integer pageSize;
-    private Integer pageNum;
-    private Integer startIndex;
-    private Integer pageTotal;
-    private List<?> datas;
+    private Integer pageSize; // 每页显示数据条数
+    private Integer pageNum;    // 当前页数
+    private Integer startIndex; // 开始下标，sql查询用参数
+    private Integer pageTotal;  // 总页数
+    private List<?> datas;      // 查询到的数据
 
     public PageInfo(Integer pageSize, Integer pageNum) {
         this.pageSize = pageSize;

@@ -41,14 +41,14 @@ function doSearch() {
  * 加载角色添加页面
  */
 function loadAddUserPage() {
-    $("#content_div").load("add.htm?t=" + Math.random());
+    $("#content_div").load("/user/add.htm?t=" + Math.random());
 }
 
 /**
  * 记载角色编辑页面 从后台获取当前id的用户信息填入edit界面中
  */
 function loadEditPage() {
-    $("#content_div").load("edit.htm?t=" + Math.random());
+    $("#content_div").load("/user/edit.htm?t=" + Math.random());
 
     var id = $(this).parent().parent().attr("userId");
 
@@ -161,7 +161,7 @@ function doDeleteUserBatch() {
 
 function loadAssignPage() {
     var id = $(this).parent().parent().attr("userId");
-    $("#content_div").load("/assignRole.htm?t="+Math.random());
+    $("#content_div").load("/user/assignRole.htm?t="+Math.random());
 
     // 似乎每次在获取了attr属性都需要setTimeOut?
     setTimeout(function (id) {

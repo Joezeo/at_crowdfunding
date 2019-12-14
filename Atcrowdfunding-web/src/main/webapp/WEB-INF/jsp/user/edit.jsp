@@ -41,6 +41,6 @@
         </form>
     </div>
 </div>
-<script src="${APP_PATH}/js/common/edit.js"/>
+<script src="${APP_PATH}/js/user/edit.js"/>
 </body>
 </html>

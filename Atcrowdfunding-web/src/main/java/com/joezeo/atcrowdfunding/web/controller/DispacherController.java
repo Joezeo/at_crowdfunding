@@ -49,24 +49,34 @@ public class DispacherController {
         return "common/panel";
     }
 
-    @RequestMapping("/add")
-    public String htmAdd() {
-        return "common/add";
+    @RequestMapping("/user/add")
+    public String htmUserAdd() {
+        return "user/add";
     }
 
-    @RequestMapping("/edit")
-    public String htmEdit() {
-        return "common/edit";
+    @RequestMapping("/user/edit")
+    public String htmUserEdit() {
+        return "user/edit";
     }
 
     @RequestMapping("/role")
-    public String hrmRole() {
+    public String htmRole() {
         return "role/role";
     }
 
-    @RequestMapping("/assignRole")
+    @RequestMapping("/user/assignRole")
     public String htmAssignRole(){
         return "user/assignRole";
+    }
+
+    @RequestMapping("/role/add")
+    public String htmRoleAdd(){
+        return "role/add";
+    }
+
+    @RequestMapping("/role/edit")
+    public String htmRoleEdit(){
+        return "role/edit";
     }
     // 同步请求
     /*@RequestMapping("/doLogin")

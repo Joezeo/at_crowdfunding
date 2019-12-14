@@ -3,7 +3,6 @@ package com.joezeo.atcrowdfunding.manager.controller;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.vo.JsonResult;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
-import com.joezeo.atcrowdfunding.common.vo.ParamModel;
 import com.joezeo.atcrowdfunding.manager.service.UserRoleService;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 
@@ -47,10 +44,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     /**
@@ -70,10 +66,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     /**
@@ -93,10 +88,9 @@ public class UserController {
         } catch (Exception e) {
             result = new JsonResult(e);
             e.printStackTrace();
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("/doQueryUser")
@@ -110,10 +104,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("doDeleteUser")
@@ -127,10 +120,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("doDeleteUserBatch")
@@ -144,10 +136,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("doGetUserRoles")
@@ -161,10 +152,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("doAddUserRoleMapper")
@@ -178,10 +168,9 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 
     @RequestMapping("doRemoveUserRoleMapper")
@@ -195,9 +184,8 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
+        } finally {
             return result;
         }
-
-        return result;
     }
 }

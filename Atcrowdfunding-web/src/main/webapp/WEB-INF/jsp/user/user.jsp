@@ -49,7 +49,7 @@
                     <th width="100">操作</th>
                 </tr>
                 </thead>
-                <tbody id="table_body">
+                <tbody id="user_table_body">
 
                 </tbody>
                 <tfoot>

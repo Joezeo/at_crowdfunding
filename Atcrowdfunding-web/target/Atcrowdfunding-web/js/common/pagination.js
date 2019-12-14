@@ -2,7 +2,12 @@
  * 这个js是所有需要分页查询公共js
  */
 
+// 记录用户点击了哪个连接，从navbar_title获取
+var groupId;
+
 function doQueryPage() {
+    groupId = $("#navbar_title").data("groupId");
+
     var pageNum = 1;
     if ($("#content_div").data("pageNum")) {
         pageNum = $("#content_div").data("pageNum");
@@ -12,9 +17,9 @@ function doQueryPage() {
 
 
     var url = '';
-    switch ($("#navbar_title").data("groupId")) {
+    switch (groupId) {
         case 1: // 点击用户维护
-            url = '/user/doPageQuery.do?t='+Math.random();
+            url = '/user/doPageQuery.do?t=' + Math.random();
 
             //获取搜搜条件 并去掉搜索条件的空格
             var loginAcct = $("#search-condition").val().trim();
@@ -23,6 +28,15 @@ function doQueryPage() {
                 params.loginAcct = loginAcct;
             }
             break;
+
+        case 2: // 点击角色维护
+            url = "/role/doPageQuery.do"
+
+            // 获取搜索条件
+            var name = $("#role-searcjh-condition").val().trim();
+            if (name != "") {
+                params.name = name;
+            }
     }
 
     $.ajax({
@@ -49,23 +63,45 @@ function doQueryPage() {
 }
 
 function loadDataInTable(list) {
-    var tbody = $("#table_body");
-    var content = "";
+    var tbody;
 
-    for (var i = 0; i < list.length; i++) {
-        content += "<tr userId='" + list[i].id + "'>";
-        content += "<td>" + (i + 1) + "</td>";
-        content += "<td><input type='checkbox'></td>";
-        content += "<td>" + list[i].loginacct + "</td>";
-        content += "<td>" + list[i].username + "</td>";
-        content += "<td>" + list[i].email + "</td>";
-        content += "<td >\n" +
-            "\t\t\t\t      <button id='table-assignRole' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
-            "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
-            "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
-            "\t\t\t\t  </td>";
-        content += "</tr>";
+    var content = "";
+    switch (groupId) {
+        case 1:
+            tbody = $("#user_table_body");
+            for (var i = 0; i < list.length; i++) {
+                content += "<tr userId='" + list[i].id + "'>";
+                content += "<td>" + (i + 1) + "</td>";
+                content += "<td><input type='checkbox'></td>";
+                content += "<td>" + list[i].loginacct + "</td>";
+                content += "<td>" + list[i].username + "</td>";
+                content += "<td>" + list[i].email + "</td>";
+                content += "<td >\n" +
+                    "\t\t\t\t      <button id='table-assignRole' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+                    "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
+                    "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
+                    "\t\t\t\t  </td>";
+                content += "</tr>";
+            }
+            break;
+
+        case 2:
+            tbody = $("#role_table_body");
+            for (var i = 0; i < list.length; i++) {
+                content += "<tr roleId='" + list[i].id + "'>";
+                content += "<td>" + (i + 1) + "</td>";
+                content += "<td><input type='checkbox'></td>";
+                content += "<td>" + list[i].name + "</td>";
+                content += "<td >\n" +
+                    "\t\t\t\t      <button id='table-assignPermission' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+                    "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
+                    "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
+                    "\t\t\t\t  </td>";
+                content += "<tr>";
+            }
+            break;
     }
+
 
     tbody.html(content);
 }
