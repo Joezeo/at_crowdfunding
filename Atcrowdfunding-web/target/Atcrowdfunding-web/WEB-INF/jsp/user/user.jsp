@@ -17,7 +17,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 数据列表</h3>
+        <h3 class="panel-title"><i class="glyphicon glyphicon-th"></i> 用户列表</h3>
     </div>
     <div class="panel-body">
         <form class="form-inline" role="form" style="float:left;">

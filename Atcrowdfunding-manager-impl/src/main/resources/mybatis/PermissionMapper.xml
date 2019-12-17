@@ -90,4 +90,8 @@
       url = #{url,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultType="Permission">
+    select * from t_permission
+  </select>
 </mapper>

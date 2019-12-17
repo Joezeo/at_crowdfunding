@@ -2,6 +2,8 @@ package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.Permission;
 
+import java.util.List;
+
 public interface PermissionMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface PermissionMapper {
     int updateByPrimaryKeySelective(Permission record);
 
     int updateByPrimaryKey(Permission record);
+
+    List<Permission> selectAll();
 }

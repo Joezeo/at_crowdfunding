@@ -59,14 +59,14 @@ public class DispacherController {
         return "user/edit";
     }
 
-    @RequestMapping("/role")
-    public String htmRole() {
-        return "role/role";
-    }
-
     @RequestMapping("/user/assignRole")
     public String htmAssignRole(){
         return "user/assignRole";
+    }
+
+    @RequestMapping("/role")
+    public String htmRole() {
+        return "role/role";
     }
 
     @RequestMapping("/role/add")
@@ -77,6 +77,11 @@ public class DispacherController {
     @RequestMapping("/role/edit")
     public String htmRoleEdit(){
         return "role/edit";
+    }
+
+    @RequestMapping("permission")
+    public String htmPermisson(){
+        return "permission/permission";
     }
     // 同步请求
     /*@RequestMapping("/doLogin")

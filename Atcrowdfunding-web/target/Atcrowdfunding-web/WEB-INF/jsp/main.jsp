@@ -87,7 +87,7 @@
                                 <a id="li_role"><i class="glyphicon glyphicon-king"></i> 角色维护</a>
                             </li>
                             <li style="height:30px;">
-                                <a href="permission.html"><i class="glyphicon glyphicon-lock"></i> 许可维护</a>
+                                <a id="li_permission"><i class="glyphicon glyphicon-lock"></i> 许可维护</a>
                             </li>
                         </ul>
                     </li>

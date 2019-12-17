@@ -6,6 +6,8 @@ $(function () {
     $("#li_user").click(loadUserPage);
 
     $("#li_role").click(loadRolePage);
+
+    $("#li_permission").click(loadPermissionPage);
 });
 
 // 内容区域加载panel页面
@@ -41,3 +43,16 @@ function loadRolePage() {
 
     return false;
 }
+
+// 内容区域加载permission页面
+function loadPermissionPage() {
+    $("#navbar_title").html("众筹平台 - 许可维护");
+    $("#navbar_title").data("groupId",3);
+    $("#content_div").load("permission.htm?t="+Math.random());
+
+    $(".list-group a").css("color", DEFAULT_COLOR);
+    $(this).css("color","red");
+
+    return false;
+}
+
