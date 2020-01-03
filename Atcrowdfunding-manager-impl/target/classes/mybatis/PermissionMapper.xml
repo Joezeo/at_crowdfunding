@@ -84,7 +84,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.joezeo.atcrowdfunding.bean.Permission">
     update t_permission
-    set pid = #{pid,jdbcType=INTEGER},
+    set
       name = #{name,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR}

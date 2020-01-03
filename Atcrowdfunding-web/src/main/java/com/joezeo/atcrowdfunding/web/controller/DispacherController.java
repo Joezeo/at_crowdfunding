@@ -79,9 +79,19 @@ public class DispacherController {
         return "role/edit";
     }
 
-    @RequestMapping("permission")
+    @RequestMapping("/permission")
     public String htmPermisson(){
         return "permission/permission";
+    }
+
+    @RequestMapping("/permission/add")
+    public String htmAddPermission(){
+        return "permission/add";
+    }
+
+    @RequestMapping("/permission/update")
+    public String htmUpdatePermission(){
+        return "permission/update";
     }
     // 同步请求
     /*@RequestMapping("/doLogin")

@@ -40,4 +40,41 @@ public class PermissionServiceImpl implements PermissionService {
         }
         return root;
     }
+
+    public Permission queryPermission(Integer id) {
+        if(id == null || id<= 0){
+            throw new ServiceException("传入的id错误");
+        }
+
+        Permission permission = permissionMapper.selectByPrimaryKey(id);
+        if(permission == null){
+            throw new ServiceException("修改权限信息数据回显错误");
+        }
+        return permission;
+    }
+
+    public void addPermission(Permission permission) {
+        int count = permissionMapper.insert(permission);
+        if(count != 1){
+            throw new ServiceException("新增权限失败");
+        }
+    }
+
+    public void removePermission(Integer id) {
+        int count = permissionMapper.deleteByPrimaryKey(id);
+        if(count != 1){
+            throw new ServiceException("删除权限失败");
+        }
+    }
+
+    public void updatePermission(Permission permission) {
+        if(permission == null){
+            throw new ServiceException("传入的参数不可为null");
+        }
+
+        int count = permissionMapper.updateByPrimaryKey(permission);
+        if(count != 1){
+            throw new ServiceException("修改权限信息失败");
+        }
+    }
 }
