@@ -77,4 +77,12 @@ public class PermissionServiceImpl implements PermissionService {
             throw new ServiceException("修改权限信息失败");
         }
     }
+
+    public List<Permission> queryAllPermissions() {
+        List<Permission> list = permissionMapper.selectAll();
+        if(list == null){
+            throw new ServiceException("获取所有权限失败");
+        }
+        return list;
+    }
 }

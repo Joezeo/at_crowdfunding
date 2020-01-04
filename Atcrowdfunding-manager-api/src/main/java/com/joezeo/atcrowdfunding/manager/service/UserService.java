@@ -4,6 +4,7 @@ import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
@@ -74,4 +75,12 @@ public interface UserService {
      * @return 根权限对象
      */
     Permission getUserPermissions(Integer userid);
+
+    /**
+     * 根据用户id查询该用户的权限分配信息
+     * 用于访问权限控制
+     * @param userid 用户id
+     * @return 改用户拥有的所有权限list
+     */
+    List<Permission> getPermissionsByUserid(Integer userid);
 }

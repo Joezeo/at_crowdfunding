@@ -196,8 +196,15 @@ public class UserServiceImpl implements UserService {
     }
 
     public Permission getUserPermissions(Integer userid) {
+        if(userid == null || userid <= 0){
+            throw new ServiceException("传入的用户id值异常");
+        }
         // 首先获取该用户所有权限信息
         List<Permission> all = permissionMapper.selectAllByUserid(userid);
+        if(all == null){
+            throw new ServiceException("获取该用户的权限失败");
+        }
+
         Permission root = null;
         Map<Integer, Permission> map = new HashMap<Integer, Permission>();
 
@@ -216,6 +223,14 @@ public class UserServiceImpl implements UserService {
         }
 
         return root;
+    }
+
+    public List<Permission> getPermissionsByUserid(Integer userid) {
+        List<Permission> all = permissionMapper.selectAllByUserid(userid);
+        if(all == null){
+            throw new ServiceException("获取该用户的权限失败");
+        }
+        return all;
     }
 
 }

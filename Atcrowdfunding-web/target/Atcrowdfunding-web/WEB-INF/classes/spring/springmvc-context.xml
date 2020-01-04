@@ -53,6 +53,7 @@
 
     <mvc:interceptors>
         <bean id="loginInterceptor" class="com.joezeo.atcrowdfunding.web.interceptor.LoginInterceptor"/>
+        <bean id="authInterceptor" class="com.joezeo.atcrowdfunding.web.interceptor.AuthInterceptor"/>
     </mvc:interceptors>
 <!--    <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>-->
 <!--    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>-->

@@ -4,6 +4,7 @@ import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.constant.Const;
 import com.joezeo.atcrowdfunding.common.vo.JsonResult;
+import com.joezeo.atcrowdfunding.manager.service.PermissionService;
 import com.joezeo.atcrowdfunding.manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class DispacherController {
@@ -132,6 +132,13 @@ public class DispacherController {
 
             User user = userService.queryLogin(loginInfo);
             session.setAttribute(Const.LOGIN_USER, user);
+
+            List<Permission> all = userService.getPermissionsByUserid(user.getId());
+            Set<String> sets = new HashSet<>();
+            for(Permission per : all){
+                sets.add(per.getUrl());
+            }
+            session.setAttribute(Const.USER_URIS, sets);
         } catch (Exception e) {
             e.printStackTrace();
             result = new JsonResult(e);
