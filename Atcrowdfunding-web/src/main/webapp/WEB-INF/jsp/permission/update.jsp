@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label for="permission-url">权限前端id值</label>
-                <input type="text" class="form-control" id="permission-frontId" placeholder="请输入权限url地址">
+                <input type="text" class="form-control" id="permission-frontId" placeholder="请输入权限前端id值">
             </div>
 
             <div class="dropdown">
