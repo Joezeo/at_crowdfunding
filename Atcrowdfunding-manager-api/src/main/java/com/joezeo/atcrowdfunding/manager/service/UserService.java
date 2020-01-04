@@ -1,5 +1,6 @@
 package com.joezeo.atcrowdfunding.manager.service;
 
+import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 
@@ -65,4 +66,12 @@ public interface UserService {
      * @return
      */
     Map<String, Object> queryRolesByUsrid(Integer userId);
+
+    /**
+     * 根据用户id查询该用户的权限分配信息
+     * 用于加载菜单
+     * @param userid 用户id
+     * @return 根权限对象
+     */
+    Permission getUserPermissions(Integer userid);
 }

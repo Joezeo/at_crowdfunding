@@ -1,5 +1,6 @@
 package com.joezeo.atcrowdfunding.manager.controller;
 
+import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.Role;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
 import com.joezeo.atcrowdfunding.common.vo.JsonResult;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Controller
 @RequestMapping("/role/")
@@ -91,6 +91,38 @@ public class RoleController {
         try{
             roleService.removeByIds(Arrays.asList(ids));
             result = new JsonResult("删除成功~");
+        } catch (Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+        } finally {
+            return result;
+        }
+    }
+
+    @RequestMapping("doGetPermissions")
+    @ResponseBody
+    public JsonResult doGetPermissions(Integer id){
+        JsonResult result = null;
+
+        try{
+            Permission root = roleService.queryPermissions(id);
+            result = new JsonResult(root);
+        } catch(Exception e){
+            e.printStackTrace();
+            result = new JsonResult(e);
+        } finally {
+            return result;
+        }
+    }
+
+    @RequestMapping("doAssignPermission")
+    @ResponseBody
+    public JsonResult doAssignPermission(Integer id, @RequestParam("ids[]") Integer[] ids){
+        JsonResult result = null;
+
+        try{
+            roleService.assignPermission(id, ids);
+            result = new JsonResult(true);
         } catch (Exception e){
             e.printStackTrace();
             result = new JsonResult(e);

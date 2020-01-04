@@ -14,6 +14,8 @@ public class Permission {
 
     private String url;
 
+    private String frontId;
+
     private boolean open = true;
 
     private boolean checked;
@@ -92,5 +94,13 @@ public class Permission {
 
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
+    }
+
+    public String getFrontId() {
+        return frontId;
+    }
+
+    public void setFrontId(String frontId) {
+        this.frontId = frontId;
     }
 }

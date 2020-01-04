@@ -33,6 +33,11 @@
                 <input type="text" class="form-control" id="permission-url" placeholder="请输入权限url地址">
             </div>
 
+            <div class="form-group">
+                <label for="permission-url">权限前端id值</label>
+                <input type="text" class="form-control" id="permission-frontId" placeholder="请输入权限url地址">
+            </div>
+
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <span id="title-span">请选择权限图标</span>

@@ -1,5 +1,6 @@
 package com.joezeo.atcrowdfunding.manager.service.impl;
 
+import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.Role;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.constant.Const;
@@ -7,6 +8,7 @@ import com.joezeo.atcrowdfunding.common.exception.LoginServiceException;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
 import com.joezeo.atcrowdfunding.common.utils.PageInfo;
+import com.joezeo.atcrowdfunding.manager.mapper.PermissionMapper;
 import com.joezeo.atcrowdfunding.manager.mapper.RoleMapper;
 import com.joezeo.atcrowdfunding.manager.mapper.UserMapper;
 import com.joezeo.atcrowdfunding.manager.mapper.UserRoleMapper;
@@ -28,6 +30,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserRoleMapper userRoleMapper;
+
+    @Resource
+    private PermissionMapper permissionMapper;
 
     public User queryLogin(Map<String, Object> loginInfo) {
         if (loginInfo == null) {
@@ -188,6 +193,29 @@ public class UserServiceImpl implements UserService {
         map.put("rightRoleList",rightRoleList);
 
         return map;
+    }
+
+    public Permission getUserPermissions(Integer userid) {
+        // 首先获取该用户所有权限信息
+        List<Permission> all = permissionMapper.selectAllByUserid(userid);
+        Permission root = null;
+        Map<Integer, Permission> map = new HashMap<Integer, Permission>();
+
+        for(Permission per : all){
+            if(per.getPid() == null){
+                root = per;
+            }
+
+            map.put(per.getId(), per);
+        }
+
+        for(Permission per : all){
+            if(per.getPid() != null){
+                map.get(per.getPid()).getChildren().add(per);
+            }
+        }
+
+        return root;
     }
 
 }

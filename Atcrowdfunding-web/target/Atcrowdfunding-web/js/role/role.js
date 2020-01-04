@@ -13,6 +13,7 @@ $(function () {
     // 动态绑定每行的操作事件
     $("#role_table_body").on("click", "#table-modify", doModifyRole);
     $("#role_table_body").on("click", "#table-remove", doRemoveRole);
+    $("#role_table_body").on("click", "#table-assignPermission", doLoadAssignPermission);
 });
 
 function doSearch() {
@@ -27,7 +28,7 @@ function doSearch() {
 }
 
 function loadAddRolePage() {
-    $("#content_div").load('/role/add.htm?t='+Math.random());
+    $("#content_div").load('/role/add.htm?t=' + Math.random());
 }
 
 function doModifyRole() {
@@ -37,7 +38,7 @@ function doModifyRole() {
     $("#content_div").data("roleId", id);
 
     setTimeout(function () {
-        $("#content_div").load('/role/edit.htm?t='+Math.random());
+        $("#content_div").load('/role/edit.htm?t=' + Math.random());
     }, 500);
 }
 
@@ -51,21 +52,21 @@ function doRemoveRole() {
     var flg = confirm("确定要删除该条数据么,不可撤销");
     var id = $(this).parent().parent().attr("roleId");
 
-    if(!flg){
+    if (!flg) {
         return false;
     }
 
     var ids = [id];
     $.ajax({
         url: '/role/doRemoveRoles.do',
-        data: {ids:ids},
+        data: {ids: ids},
         dataType: 'json',
         type: 'post',
         success: function (jsonResult) {
-            if(jsonResult.success){
+            if (jsonResult.success) {
                 alert("删除成功~");
 
-                $("#content_div").data("pageNum",1);
+                $("#content_div").data("pageNum", 1);
                 doQueryPage();
             } else {
                 alert(jsonResult.message);
@@ -78,12 +79,12 @@ function doRemoveRoles() {
     var selected = $("#role_table_body :checkbox:checked");
     var ids = [];
 
-    if(selected.length == 0){
+    if (selected.length == 0) {
         return false;
     }
 
     var flg = confirm("确定要删除这些数据么,不可撤销");
-    if(!flg){
+    if (!flg) {
         return false;
     }
 
@@ -93,19 +94,24 @@ function doRemoveRoles() {
 
     $.ajax({
         url: '/role/doRemoveRoles.do',
-        data: {ids:ids},
+        data: {ids: ids},
         dataType: 'json',
         type: 'post',
         success: function (jsonResult) {
-            if(jsonResult.success){
+            if (jsonResult.success) {
                 alert("删除成功~");
 
-                $("#content_div").data("pageNum",1);
-                $("#role-top-checkbox").prop("checked",false);
+                $("#content_div").data("pageNum", 1);
+                $("#role-top-checkbox").prop("checked", false);
                 doQueryPage();
             } else {
                 alert(jsonResult.message);
             }
         }
     })
+}
+
+function doLoadAssignPermission() {
+    var id = $(this).parent().parent().attr("roleId");
+    $("#content_div").load("/role/assignPermission.htm?roleid=" + id);
 }

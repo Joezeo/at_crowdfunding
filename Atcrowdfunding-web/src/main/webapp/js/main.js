@@ -3,18 +3,34 @@ $(function () {
     DEFAULT_COLOR = $("#li_user").css("color");
     loadPanelPage();
 
-    $("#li_user").click(loadUserPage);
+    $("#main-region").on("click", "#li_panel", loadPanelPage);
+    $("#main-region").on("click", "#li_user", loadUserPage);
+    $("#main-region").on("click", "#li_role", loadRolePage);
+    $("#main-region").on("click", "#li_permission", loadPermissionPage);
 
-    $("#li_role").click(loadRolePage);
-
-    $("#li_permission").click(loadPermissionPage);
+    controlMenu();
+    // $("#li_user").click(loadUserPage);
+    // $("#li_role").click(loadRolePage);
+    // $("#li_permission").click(loadPermissionPage);
 });
+
+function controlMenu(){
+    $("#main-region").on("click", ".list-group-item", function(){
+        if ( $(this).find("ul") ) {
+            $(this).toggleClass("tree-closed");
+            if ( $(this).hasClass("tree-closed") ) {
+                $("ul", this).hide("fast");
+            } else {
+                $("ul", this).show("fast");
+            }
+        }
+    });
+}
 
 // 内容区域加载panel页面
 function loadPanelPage() {
     $("#navbar_title").html("众筹平台 - 控制面板");
     $("#content_div").load("panel.htm?t="+Math.random());
-
     return false;
 }
 

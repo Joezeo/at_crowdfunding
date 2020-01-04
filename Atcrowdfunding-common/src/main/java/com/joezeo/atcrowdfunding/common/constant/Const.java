@@ -6,4 +6,7 @@ public class Const {
 
     // 添加新用户时的默认初始密码
     public static final String DEFAULT_INIT_PASSWORD = "123";
+
+    // 用户根权限的名称
+    public static final String ROOT_PERMISSION = "rootPermission";
 }

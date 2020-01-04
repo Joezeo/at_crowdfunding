@@ -1,5 +1,6 @@
 package com.joezeo.atcrowdfunding.web.controller;
 
+import com.joezeo.atcrowdfunding.bean.Permission;
 import com.joezeo.atcrowdfunding.bean.User;
 import com.joezeo.atcrowdfunding.common.constant.Const;
 import com.joezeo.atcrowdfunding.common.vo.JsonResult;
@@ -35,7 +36,13 @@ public class DispacherController {
     }
 
     @RequestMapping("/main")
-    public String htmMain() {
+    public String htmMain(HttpSession session) {
+        // 在加载主页面时，需要获取当前用户的权限分配信息
+        User user = (User) session.getAttribute(Const.LOGIN_USER);
+
+        Permission root = userService.getUserPermissions(user.getId());
+
+        session.setAttribute(Const.ROOT_PERMISSION, root);
         return "main";
     }
 
@@ -92,6 +99,11 @@ public class DispacherController {
     @RequestMapping("/permission/update")
     public String htmUpdatePermission(){
         return "permission/update";
+    }
+
+    @RequestMapping("/role/assignPermission")
+    public String htmAssignPermission(){
+        return "role/assignPermission";
     }
     // 同步请求
     /*@RequestMapping("/doLogin")

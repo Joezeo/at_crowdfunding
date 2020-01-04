@@ -1,6 +1,7 @@
 package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.RolePermission;
+import org.apache.ibatis.annotations.Param;
 
 public interface RolePermissionMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,8 @@ public interface RolePermissionMapper {
     int updateByPrimaryKeySelective(RolePermission record);
 
     int updateByPrimaryKey(RolePermission record);
+
+    int insertByRoleid(@Param("roleId") Integer roleId,@Param("permissionId") Integer permissionId);
+
+    int deleteByRoleid(Integer roleId);
 }
