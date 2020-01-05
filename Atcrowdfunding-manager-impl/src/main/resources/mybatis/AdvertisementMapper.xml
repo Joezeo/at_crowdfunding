@@ -101,4 +101,24 @@
       userid = #{userid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByPage" parameterType="map" resultType="Advertisement">
+    select * from t_advertisement
+    <where>
+      <if test="name != null and name!=''">
+        name like concat("%",#{name}, "%")
+      </if>
+    </where>
+    order by id desc
+    limit #{pageInfo.startIndex},#{pageInfo.pageSize}
+  </select>
+
+  <select id="selectCount" parameterType="string" resultType="int">
+    select count(*) from t_advertisement
+    <where>
+      <if test="name != null and name != ''">
+        name like concat("%",#{name}, "%")
+      </if>
+    </where>
+  </select>
 </mapper>

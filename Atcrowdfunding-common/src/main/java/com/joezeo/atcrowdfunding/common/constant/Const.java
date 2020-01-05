@@ -1,9 +1,5 @@
 package com.joezeo.atcrowdfunding.common.constant;
 
-import com.joezeo.atcrowdfunding.bean.Permission;
-
-import java.util.Set;
-
 public class Const {
     // 存入session中用户信息的属性名
     public static final String LOGIN_USER = "user";

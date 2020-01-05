@@ -30,13 +30,23 @@ function doQueryPage() {
             break;
 
         case 2: // 点击角色维护
-            url = "/role/doPageQuery.do"
+            url = "/role/doPageQuery.do";
 
             // 获取搜索条件
             var name = $("#role-searcjh-condition").val().trim();
             if (name != "") {
                 params.name = name;
             }
+
+        case 4:  // 点击广告管理
+            url = "/advert/doPageQuery.do";
+
+            // 获取搜索条件
+            var name = $("#advert-search-condition").val().trim();
+            if(name != ""){
+                params.name = name;
+            }
+            break;
     }
 
     $.ajax({
@@ -67,7 +77,7 @@ function loadDataInTable(list) {
 
     var content = "";
     switch (groupId) {
-        case 1:
+        case 1: // 用户
             tbody = $("#user_table_body");
             for (var i = 0; i < list.length; i++) {
                 content += "<tr userId='" + list[i].id + "'>";
@@ -85,13 +95,44 @@ function loadDataInTable(list) {
             }
             break;
 
-        case 2:
+        case 2: // 角色
             tbody = $("#role_table_body");
             for (var i = 0; i < list.length; i++) {
                 content += "<tr roleId='" + list[i].id + "'>";
                 content += "<td>" + (i + 1) + "</td>";
                 content += "<td><input type='checkbox'></td>";
                 content += "<td>" + list[i].name + "</td>";
+                content += "<td >\n" +
+                    "\t\t\t\t      <button id='table-assignPermission' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+                    "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
+                    "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
+                    "\t\t\t\t  </td>";
+                content += "<tr>";
+            }
+            break;
+
+        case 4: // 广告
+            tbody = $("#advert_table_body");
+            for(var i=0; i<list.length; i++){
+                content += "<tr advertId='" + list[i].id + "'>";
+                content += "<td>" + (i + 1) + "</td>";
+                content += "<td>" + list[i].name + "</td>";
+                var sta = "";
+                switch (list[i].status) {
+                    case "0":
+                        sta = "草稿";
+                        break;
+                    case "1":
+                        sta = "未审核";
+                        break;
+                    case "2":
+                        sta = "审核完成";
+                        break;
+                    case "3":
+                        sta = "发布";
+                        break;
+                }
+                content += "<td>" + sta + "</td>";
                 content += "<td >\n" +
                     "\t\t\t\t      <button id='table-assignPermission' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
                     "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +

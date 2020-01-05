@@ -105,6 +105,16 @@ public class DispacherController {
     public String htmAssignPermission(){
         return "role/assignPermission";
     }
+
+    @RequestMapping("/advert")
+    public String htmAdvert(){
+        return "advert/advert";
+    }
+
+    @RequestMapping("/advert/add")
+    public String htmAdvertAdd(){
+        return "advert/add";
+    }
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){
