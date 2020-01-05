@@ -20,8 +20,8 @@
             <div class="form-group has-feedback">
                 <div class="input-group">
                     <div class="input-group-addon">查询条件</div>
-                    <input id="role-searcjh-condition" class="form-control has-success" type="text"
-                           placeholder="请输入查询条件">
+                    <input id="role-search-condition" class="form-control has-success" type="text"
+                           placeholder="请输入查询条件" value="">
                 </div>
             </div>
             <button id="role-search-btn" type="button" class="btn btn-warning"><i

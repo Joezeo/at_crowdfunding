@@ -1,5 +1,5 @@
 $(function () {
-    doQueryPage();
+    doQueryPage(0);
 
     $("#role-search-btn").click(doSearch);
 
@@ -19,10 +19,10 @@ $(function () {
 function doSearch() {
 
     //去掉搜索条件的空格
-    var loginAcct = $("#role-searcjh-condition").val().trim();
+    var name = $("#role-searcjh-condition").val().trim();
 
     // 如果没有输入任何值或者输入了空格 将输入框重置
-    $("#role-searcjh-condition").val(loginAcct);
+    $("#role-searcjh-condition").val(name);
 
     doQueryPage();
 }
@@ -80,6 +80,7 @@ function doRemoveRoles() {
     var ids = [];
 
     if (selected.length == 0) {
+        alert("请至少选择一条数据");
         return false;
     }
 

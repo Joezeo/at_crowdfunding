@@ -1,7 +1,7 @@
 $(function () {
     // 执行分页查询应该放到user.js中，然后在分页导航条点击时应当重新loaduser页面
     // 否则之后页码的修改按钮点击事件无法被绑定
-    doQueryPage();
+    doQueryPage(0);
     // 点击查询按钮
     $("#search-button").click(doSearch);
 
@@ -56,7 +56,7 @@ function loadEditPage() {
     // 这种情况一般出现在 alert() 之后的某个代码需要页面元素进入一定的状态才能使用，
     // 加上 alert() 之后，相当于页面元素有足够的时间进入一定的状态了，如果确定你的代码没有问题，
     // 你可以把 alert() 之后的代码放到一个 setTimeout 的函数中，也就是停一会再运行下面的代码，
-    setTimeout(doAjax, 100, id);
+    setTimeout(doAjax, 300, id);
 }
 
 function doAjax(id) {
@@ -122,11 +122,6 @@ function selectAll() {
 }
 
 function doDeleteUserBatch() {
-    var res = confirm("您确定要删除这些数据么？");
-    if (!res) {
-        return false;
-    }
-
     // 获取所有选中的单选框， id是绑定在tr上的，即绑定在单选框的parent()上
     var boxs = $("#table_body :input:checked");
     var ids = "";
@@ -140,6 +135,12 @@ function doDeleteUserBatch() {
     });
 
     if (ids == "") {
+        alert("请至少选择一条数据");
+        return false;
+    }
+
+    var res = confirm("您确定要删除这些数据么？");
+    if (!res) {
         return false;
     }
 

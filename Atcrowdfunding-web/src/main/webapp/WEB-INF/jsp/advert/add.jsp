@@ -30,7 +30,8 @@
                 </div>
                 <div class="form-group">
                     <label for="advpic">广告图片</label>
-                    <input type="file" class="form-control" id="advpic" name="advpic" placeholder="请输入广告图片">
+                    <input type="file" class="form-control" id="advpic" name="advpic" placeholder="请输入广告图片" accept="image/png,image/gif,image/jpg,image/jpeg">
+                    <img src="" id="show" width="300" heigt="250">
                 </div>
                 <button id="advert-add-submit" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> 新增</button>
                 <button id="advert-add-refresh" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-refresh"></i> 重置</button>

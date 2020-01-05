@@ -26,15 +26,15 @@
             <input type="hidden" id="edit-id" />
             <div class="form-group">
                 <label for="edit-loginacct">登陆账号</label>
-                <input type="text" class="form-control" id="edit-loginacct" value="test">
+                <input type="text" class="form-control" id="edit-loginacct">
             </div>
             <div class="form-group">
                 <label for="edit-username">用户名称</label>
-                <input type="text" class="form-control" id="edit-username" value="测试用户">
+                <input type="text" class="form-control" id="edit-username">
             </div>
             <div class="form-group">
                 <label for="edit-email">邮箱地址</label>
-                <input type="email" class="form-control" id="edit-email" value="xxxx@xxxx.com">
+                <input type="email" class="form-control" id="edit-email">
                 <p class="help-block label label-warning">请输入合法的邮箱地址, 格式为： xxxx@xxxx.com</p> </div>
             <button id="edit-modify-button" type="button" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i> 修改</button>
             <button id="edit-refresh-button" type="button" class="btn btn-danger"><i class="glyphicon glyphicon-refresh"></i> 重置</button>

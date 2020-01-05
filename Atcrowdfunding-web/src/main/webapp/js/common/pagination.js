@@ -5,13 +5,10 @@
 // 记录用户点击了哪个连接，从navbar_title获取
 var groupId;
 
-function doQueryPage() {
+function doQueryPage(pageIndex) {
     groupId = $("#navbar_title").data("groupId");
 
-    var pageNum = 1;
-    if ($("#content_div").data("pageNum")) {
-        pageNum = $("#content_div").data("pageNum");
-    }
+    var pageNum = pageIndex+1;
     var pageSize = 10;
     var params = {pageNum: pageNum, pageSize: pageSize};
 
@@ -22,7 +19,10 @@ function doQueryPage() {
             url = '/user/doPageQuery.do?t=' + Math.random();
 
             //获取搜搜条件 并去掉搜索条件的空格
-            var loginAcct = $("#search-condition").val().trim();
+            var loginAcct = $("#search-condition").val();
+            if(loginAcct){
+                loginAcct.trim();
+            }
             // 如果用户键入了搜索条件
             if (loginAcct != "") {
                 params.loginAcct = loginAcct;
@@ -33,16 +33,23 @@ function doQueryPage() {
             url = "/role/doPageQuery.do";
 
             // 获取搜索条件
-            var name = $("#role-searcjh-condition").val().trim();
+            var name = $("#role-search-condition").val();
+            if(name){
+                name.trim();
+            }
             if (name != "") {
                 params.name = name;
             }
+            break;
 
         case 4:  // 点击广告管理
             url = "/advert/doPageQuery.do";
 
             // 获取搜索条件
-            var name = $("#advert-search-condition").val().trim();
+            var name = $("#advert-search-condition").val();
+            if(name){
+                name.trim();
+            }
             if(name != ""){
                 params.name = name;
             }
@@ -56,9 +63,6 @@ function doQueryPage() {
         type: 'post',
         success: function (jsonResult) {
             if (jsonResult.success) {
-                //将当前页码绑定在content_div上
-                $("#content_div").data("pageNum", jsonResult.data.pageNum);
-
                 //将数据填入表格
                 loadDataInTable(jsonResult.data.datas);
 
@@ -143,17 +147,7 @@ function loadDataInTable(list) {
             break;
     }
 
-
     tbody.html(content);
-}
-
-function reloadUserPage(pageNum) {
-    // 将pageNum绑定在content_div上
-    $("#content_div").data("pageNum", pageNum);
-
-    // $("#content_div").load("user.htm?t=" + Math.random()); //这样操作会清空搜索框里的搜索信息
-
-    doQueryPage();
 }
 
 /**
@@ -161,27 +155,15 @@ function reloadUserPage(pageNum) {
  * @param pageInfo 从后台查询到的分页信息
  */
 function setPagination(pageInfo) {
-    var target = pageInfo.pageNum;
-    var content = '';
-    if (target == 1) {
-        content += "<li class='disabled'><a href='" + target + "'>上一页</a></li>";
-    } else {
-        content += "<li><a onclick='reloadUserPage(" + (target - 1) + ")'>上一页</a></li>";
-    }
-
-    for (var i = 0; i < pageInfo.pageTotal; i++) {
-        if (pageInfo.pageNum == i + 1) {
-            content += "<li class='active'><a onclick='reloadUserPage(" + (i + 1) + ")'>" + (i + 1) + "</a></li>"
-        } else {
-            content += "<li><a onclick='reloadUserPage(" + (i + 1) + ")'>" + (i + 1) + "</a></li>"
-        }
-
-    }
-    target = pageInfo.pageNum;
-    if (target == pageInfo.pageTotal) {
-        content += "<li class='disabled'><a href='#'>下一页</a></li>";
-    } else {
-        content += "<li><a onclick='reloadUserPage(" + (target + 1) + ")'>下一页</a></li>";
-    }
-    $("#pagination").html(content);
+    $("#Pagination").pagination(pageInfo.pageTotal, {
+        num_edge_entries: 1, //边缘页数
+        num_display_entries: 4, //主体页数
+        current_page: pageInfo.pageNum-1, //当前页数
+        callback: doQueryPage,
+        //每页显示1项
+        //这里由于传的是总页数而不是总的数据条数，这里的1相当于每次展示1页，而一页有多少数据由上面的pageSize控制
+        items_per_page:1,
+        prev_text: "上一页",
+        next_text: "下一页"
+    });
 }

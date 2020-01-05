@@ -1,5 +1,5 @@
 $(function () {
-    doQueryPage();
+    doQueryPage(0);
 
     $("#advert-search-btn").click(function () {
         doQueryPage();

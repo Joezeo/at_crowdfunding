@@ -39,7 +39,6 @@ function loadPanelPage() {
 function loadUserPage() {
     $("#navbar_title").html("众筹平台 - 用户维护");
     $("#navbar_title").data("groupId", 1);
-    $("#content_div").data("pageNum", 1);
     $("#content_div").load("user.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
@@ -52,7 +51,6 @@ function loadUserPage() {
 function loadRolePage() {
     $("#navbar_title").html("众筹平台 - 角色维护");
     $("#navbar_title").data("groupId", 2);
-    $("#content_div").data("pageNum", 1);
     $("#content_div").load("role.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
@@ -77,7 +75,6 @@ function loadPermissionPage() {
 function loadAdvertPage(){
     $("#navbar_title").html("众筹平台 - 广告管理");
     $("#navbar_title").data("groupId",4);
-    $("#content_div").data("pageNum", 1);
     $("#content_div").load("advert.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
