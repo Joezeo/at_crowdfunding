@@ -16,7 +16,7 @@ function doAddAdvert() {
     var url = $("#url").val();
     var advpic = $("#advpic").val();
 
-    if(name == null || name== "" || url==null||url==""||advpic==null||advpic==""){
+    if (name == null || name == "" || url == null || url == "" || advpic == null || advpic == "") {
         alert("数据不可为空,请完成所有数据的填写");
         return false;
     }
