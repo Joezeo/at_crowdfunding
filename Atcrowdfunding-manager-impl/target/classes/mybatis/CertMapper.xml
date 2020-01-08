@@ -55,4 +55,24 @@
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByPage" parameterType="map" resultType="Cert">
+    select * from t_cert
+    <where>
+      <if test="name != null and name!=''">
+        name like concat("%",#{name}, "%")
+      </if>
+    </where>
+    order by id desc
+    limit #{pageInfo.startIndex},#{pageInfo.pageSize}
+  </select>
+
+  <select id="selectCount" parameterType="string" resultType="int">
+    select count(*) from t_cert
+    <where>
+      <if test="name != null and name != ''">
+        name like concat("%",#{name}, "%")
+      </if>
+    </where>
+  </select>
 </mapper>

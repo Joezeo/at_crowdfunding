@@ -8,6 +8,7 @@ $(function () {
     $("#main-region").on("click", "#li_role", loadRolePage);
     $("#main-region").on("click", "#li_permission", loadPermissionPage);
     $("#main-region").on("click", "#li_advert", loadAdvertPage);
+    $("#main-region").on("click", "#li_cert", loadCertPage);
 
     controlMenu();
     // $("#li_user").click(loadUserPage);
@@ -76,6 +77,18 @@ function loadAdvertPage(){
     $("#navbar_title").html("众筹平台 - 广告管理");
     $("#navbar_title").data("groupId",4);
     $("#content_div").load("advert.htm?t="+Math.random());
+
+    $(".list-group a").css("color", DEFAULT_COLOR);
+    $(this).css("color","red");
+
+    return false;
+}
+
+// 内容区域加载资质管理页面
+function loadCertPage() {
+    $("#navbar_title").html("众筹平台 - 资质管理");
+    $("#navbar_title").data("groupId",5);
+    $("#content_div").load("cert.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
     $(this).css("color","red");

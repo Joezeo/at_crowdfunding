@@ -54,6 +54,19 @@ function doQueryPage(pageIndex) {
                 params.name = name;
             }
             break;
+
+        case 5: // 点击资质管理
+            url = "/cert/doQueryPage.do";
+
+            // 获取搜索条件
+            var name = $("#cert-search-condition").val();
+            if(name){
+                name.trim();
+            }
+            if(name != ""){
+                params.name = name;
+            }
+            break;
     }
 
     $.ajax({
@@ -139,6 +152,21 @@ function loadDataInTable(list) {
                 content += "<td>" + sta + "</td>";
                 content += "<td >\n" +
                     "\t\t\t\t      <button id='table-assignPermission' type=\"button\" class=\"btn btn-success btn-xs\"><i class=\" glyphicon glyphicon-check\"></i></button>\n" +
+                    "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
+                    "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
+                    "\t\t\t\t  </td>";
+                content += "<tr>";
+            }
+            break;
+
+        case 5: // 资质管理
+            tbody = $("#cert_table_body");
+            for(var i=0; i<list.length; i++) {
+                content += "<tr certId='" + list[i].id + "'>";
+                content += "<td>" + (i + 1) + "</td>";
+                content += "<td><input type='checkbox'></td>";
+                content += "<td>" + list[i].name + "</td>";
+                content += "<td >\n" +
                     "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
                     "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
                     "\t\t\t\t  </td>";

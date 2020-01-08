@@ -115,6 +115,11 @@ public class DispacherController {
     public String htmAdvertAdd(){
         return "advert/add";
     }
+
+    @RequestMapping("/cert")
+    public String htmCert(){
+        return "cert/cert";
+    }
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){
