@@ -42,4 +42,50 @@ public class CertServiceImpl implements CertService {
 
         return pageInfo;
     }
+
+    public void addCert(Cert cert) {
+        if(cert == null){
+            throw new ServiceException("传入参数不可为null");
+        }
+
+        int count = certMapper.insert(cert);
+        if(count != 1){
+            throw new ServiceException("添加资质失败，请稍后重试");
+        }
+    }
+
+    public void deleteCertBatch(Integer[] ids) {
+        if(ids == null){
+            throw new ServiceException("传入的参数不可为null");
+        }
+
+        for(Integer id : ids){
+            int count = certMapper.deleteByPrimaryKey(id);
+            if(count != 1){
+                throw new ServiceException("删除资质失败，请稍后重试");
+            }
+        }
+    }
+
+    public void deleteCert(Integer id) {
+        if(id == null || id<=0){
+            throw new ServiceException("传入资质id值异常");
+        }
+
+        int count = certMapper.deleteByPrimaryKey(id);
+        if(count != 1){
+            throw new ServiceException("删除资质失败，请稍后重试");
+        }
+    }
+
+    public Cert queryCert(Integer id) {
+        if(id == null || id<=0){
+            throw new ServiceException("传入id值异常");
+        }
+        Cert cert = certMapper.selectByPrimaryKey(id);
+        if(cert == null){
+            throw new ServiceException("查询资质信息失败");
+        }
+        return cert;
+    }
 }

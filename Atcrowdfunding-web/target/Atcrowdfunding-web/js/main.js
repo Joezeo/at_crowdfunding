@@ -9,6 +9,7 @@ $(function () {
     $("#main-region").on("click", "#li_permission", loadPermissionPage);
     $("#main-region").on("click", "#li_advert", loadAdvertPage);
     $("#main-region").on("click", "#li_cert", loadCertPage);
+    $("#main-region").on("click", "#li_process", loadProcessPage);
 
     controlMenu();
     // $("#li_user").click(loadUserPage);
@@ -89,6 +90,18 @@ function loadCertPage() {
     $("#navbar_title").html("众筹平台 - 资质管理");
     $("#navbar_title").data("groupId",5);
     $("#content_div").load("cert.htm?t="+Math.random());
+
+    $(".list-group a").css("color", DEFAULT_COLOR);
+    $(this).css("color","red");
+
+    return false;
+}
+
+// 内容区域加载流程管理页面
+function loadProcessPage() {
+    $("#navbar_title").html("众筹平台 - 流程管理");
+    $("#navbar_title").data("groupId",6);
+    $("#content_div").load("process.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
     $(this).css("color","red");

@@ -19,10 +19,10 @@ $(function () {
 function doSearch() {
 
     //去掉搜索条件的空格
-    var name = $("#role-searcjh-condition").val().trim();
+    var name = $("#role-search-condition").val().trim();
 
     // 如果没有输入任何值或者输入了空格 将输入框重置
-    $("#role-searcjh-condition").val(name);
+    $("#role-search-condition").val(name);
 
     doQueryPage();
 }
@@ -66,8 +66,7 @@ function doRemoveRole() {
             if (jsonResult.success) {
                 alert("删除成功~");
 
-                $("#content_div").data("pageNum", 1);
-                doQueryPage();
+                doQueryPage(0);
             } else {
                 alert(jsonResult.message);
             }
@@ -102,9 +101,8 @@ function doRemoveRoles() {
             if (jsonResult.success) {
                 alert("删除成功~");
 
-                $("#content_div").data("pageNum", 1);
                 $("#role-top-checkbox").prop("checked", false);
-                doQueryPage();
+                doQueryPage(0);
             } else {
                 alert(jsonResult.message);
             }

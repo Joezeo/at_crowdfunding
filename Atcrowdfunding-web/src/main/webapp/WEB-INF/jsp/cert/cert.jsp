@@ -29,7 +29,7 @@
         <button id="cert-delete-btn" type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i
                 class=" glyphicon glyphicon-remove"></i> 删除
         </button>
-        <button id="cert-add-btn" type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='form.html'"><i
+        <button id="cert-add-btn" type="button" class="btn btn-primary" style="float:right;" ><i
                 class="glyphicon glyphicon-plus"></i> 新增
         </button>
         <br>
@@ -39,7 +39,7 @@
                 <thead>
                 <tr>
                     <th width="30">#</th>
-                    <th width="30"><input type="checkbox"></th>
+                    <th width="30"><input type="checkbox" id="checkbox_all"></th>
                     <th>名称</th>
                     <th width="100">操作</th>
                 </tr>

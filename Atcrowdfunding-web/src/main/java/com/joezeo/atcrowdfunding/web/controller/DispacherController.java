@@ -120,6 +120,21 @@ public class DispacherController {
     public String htmCert(){
         return "cert/cert";
     }
+
+    @RequestMapping("/cert/add")
+    public String htmCertAdd(){
+        return "cert/add";
+    }
+
+    @RequestMapping("/cert/edit")
+    public String htmCertEdit() {
+        return "cert/edit";
+    }
+
+    @RequestMapping("/process")
+    public String htmProcess(){
+        return "process/process";
+    }
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){

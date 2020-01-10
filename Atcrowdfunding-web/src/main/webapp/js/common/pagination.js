@@ -67,6 +67,19 @@ function doQueryPage(pageIndex) {
                 params.name = name;
             }
             break;
+
+        case 6: // 点击流程管理
+            url = "/process/doQueryPage.do";
+
+            // 获取搜索条件
+            var name = $("#process-search-condition").val();
+            if(name){
+                name.trim();
+            }
+            if(name != ""){
+                params.name = name;
+            }
+            break;
     }
 
     $.ajax({
@@ -170,6 +183,22 @@ function loadDataInTable(list) {
                     "\t\t\t\t      <button id='table-modify' type=\"button\" class=\"btn btn-primary btn-xs\"><i class=\" glyphicon glyphicon-pencil\"></i></button>\n" +
                     "\t\t\t\t\t  <button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i></button>\n" +
                     "\t\t\t\t  </td>";
+                content += "<tr>";
+            }
+            break;
+
+        case 6: // 流程管理
+            tbody = $("#process_table_body");
+            for(var i=0; i<list.length; i++) {
+                content += "<tr processId='" + list[i].id + "'>";
+                content += "<td>" + (i + 1) + "</td>";
+                content += "<td>" + list[i].name + "</td>";
+                content += "<td>" + list[i].version + "</td>";
+                content += "<td>" + list[i].key + "</td>";
+                content += "<td >"+"<button id='table-see' type=\"button\" class=\"btn btn-success btn-xs\"><i\n" +
+                    "class=\" glyphicon glyphicon-eye-open\"></i></button>\n" +
+                    "<button id='table-remove' type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\" glyphicon glyphicon-remove\"></i>\n" +
+                    "</button>\n"+"</td>";
                 content += "<tr>";
             }
             break;

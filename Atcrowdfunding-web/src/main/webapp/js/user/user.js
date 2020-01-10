@@ -34,7 +34,7 @@ function doSearch() {
     // 如果没有输入任何值或者输入了空格 将输入框重置
     $("#search-condition").val(loginAcct);
 
-    doQueryPage();
+    doQueryPage(0);
 }
 
 /**
@@ -107,8 +107,7 @@ function doDeleteUser() {
                 alert("删除成功~");
 
                 //重新执行分页查询刷新数据
-                $("#content_div").data("pageNum", 1); // 把pageNum设置为1
-                doQueryPage();
+                doQueryPage(0);
             } else {
                 alert(jsonResult.message);
             }
@@ -152,7 +151,7 @@ function doDeleteUserBatch() {
         success: function (jsonResult) {
             if (jsonResult.success) {
                 alert("删除成功");
-                doQueryPage();
+                doQueryPage(0);
             } else {
                 alert(jsonResult.message);
             }

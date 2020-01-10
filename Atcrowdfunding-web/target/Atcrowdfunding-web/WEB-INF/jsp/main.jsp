@@ -74,11 +74,13 @@
 
         <%@include file="./menu.jsp"%>
 
+
         <div id="content_div" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <!-- 加载其他页面内容 -->
 
         </div>
+
     </div>
 </div>
 <script src="${APP_PATH }/jquery/jquery-2.1.1.min.js"></script>
