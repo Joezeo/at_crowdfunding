@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joezeo.atcrowdfunding.potal.mapper.MemberCertMapper">
+  <resultMap id="BaseResultMap" type="com.joezeo.atcrowdfunding.bean.MemberCert">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="memberid" jdbcType="INTEGER" property="memberid" />
+    <result column="certid" jdbcType="INTEGER" property="certid" />
+    <result column="iconpath" jdbcType="VARCHAR" property="iconpath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, memberid, certid, iconpath
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_member_cert
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_member_cert
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.joezeo.atcrowdfunding.bean.MemberCert">
+    insert into t_member_cert (id, memberid, certid, 
+      iconpath)
+    values (#{id,jdbcType=INTEGER}, #{memberid,jdbcType=INTEGER}, #{certid,jdbcType=INTEGER}, 
+      #{iconpath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.joezeo.atcrowdfunding.bean.MemberCert">
+    insert into t_member_cert
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="memberid != null">
+        memberid,
+      </if>
+      <if test="certid != null">
+        certid,
+      </if>
+      <if test="iconpath != null">
+        iconpath,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="memberid != null">
+        #{memberid,jdbcType=INTEGER},
+      </if>
+      <if test="certid != null">
+        #{certid,jdbcType=INTEGER},
+      </if>
+      <if test="iconpath != null">
+        #{iconpath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joezeo.atcrowdfunding.bean.MemberCert">
+    update t_member_cert
+    <set>
+      <if test="memberid != null">
+        memberid = #{memberid,jdbcType=INTEGER},
+      </if>
+      <if test="certid != null">
+        certid = #{certid,jdbcType=INTEGER},
+      </if>
+      <if test="iconpath != null">
+        iconpath = #{iconpath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joezeo.atcrowdfunding.bean.MemberCert">
+    update t_member_cert
+    set memberid = #{memberid,jdbcType=INTEGER},
+      certid = #{certid,jdbcType=INTEGER},
+      iconpath = #{iconpath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

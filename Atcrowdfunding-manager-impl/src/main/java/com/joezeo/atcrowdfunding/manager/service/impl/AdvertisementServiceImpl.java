@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class AdvertisementServiceImpk implements AdvertisementService {
+public class AdvertisementServiceImpl implements AdvertisementService {
 
     @Resource
     private AdvertisementMapper advertisementMapper;

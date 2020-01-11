@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -20,14 +21,16 @@
     <link rel="stylesheet" href="${APP_PATH }/css/carousel.css">
     <style>
         h3 {
-            font-weight:bold;
+            font-weight: bold;
         }
+
         #footer {
             padding: 15px 0;
             background: #fff;
             border-top: 1px solid #ddd;
             text-align: center;
         }
+
         #topcontrol {
             color: #fff;
             z-index: 99;
@@ -58,49 +61,156 @@
             -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
         }
-        /* 侧栏导航 */
-        .sideBox{padding:10px;height:220px;background:#fff;margin-bottom:10px;overflow:hidden;}
-        .sideBox .hd{height:30px; line-height:30px; background:#f60; padding:0 10px;text-align:center;overflow:hidden;}
-        .sideBox .hd .more{color:#fff;}
-        .sideBox .hd h3 span{font-weight:bold; font-size:14px;color:#fff;}
-        .sideBox .bd{padding:5px 0 0;}
 
-        #sideMenu .bd li{margin-bottom:2px; height:30px; line-height:30px;text-align:center; overflow:hidden;}
-        #sideMenu .bd li a{display:block;background:#EAE6DD;}
-        #sideMenu .bd li a:hover{background:#D5CFBF;}
+        /* 侧栏导航 */
+        .sideBox {
+            padding: 10px;
+            height: 220px;
+            background: #fff;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .sideBox .hd {
+            height: 30px;
+            line-height: 30px;
+            background: #f60;
+            padding: 0 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .sideBox .hd .more {
+            color: #fff;
+        }
+
+        .sideBox .hd h3 span {
+            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .sideBox .bd {
+            padding: 5px 0 0;
+        }
+
+        #sideMenu .bd li {
+            margin-bottom: 2px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #sideMenu .bd li a {
+            display: block;
+            background: #EAE6DD;
+        }
+
+        #sideMenu .bd li a:hover {
+            background: #D5CFBF;
+        }
 
         /* 列表页 */
-        #mainBox{margin-bottom:10px;padding:10px;background:#fff;overflow:hidden;}
-        #mainBox .mHd{border-bottom:2px solid #09c;height:30px;line-height:30px;}
-        #mainBox .mHd h3{display:initial;*display:inline;zoom:1;padding:0 15px;background:#09c;color:#fff;}
-        #mainBox .mHd h3 span{color:#fff;font-size:14px;font-weight:bold;}
-        #mainBox .path{float:right;}
+        #mainBox {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        #mainBox .mHd {
+            border-bottom: 2px solid #09c;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #mainBox .mHd h3 {
+            display: initial;
+            *display: inline;
+            zoom: 1;
+            padding: 0 15px;
+            background: #09c;
+            color: #fff;
+        }
+
+        #mainBox .mHd h3 span {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #mainBox .path {
+            float: right;
+        }
 
         /* 位置导航 */
-        .path{ height:30px; line-height:30px; padding-left:10px;}
-        .path a,.path span{ margin:0 5px;}
+        .path {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        .path a, .path span {
+            margin: 0 5px;
+        }
 
         /* 文章列表 */
-        .newsList{padding:10px;text-align:left;}
-        .newsList li{background:url("../images/share/point.png") no-repeat 2px 14px; padding-left:10px;height:30px; line-height:30px;}
-        .newsList li a{display:inline-block;*display:inline;zoom:1;font-size:14px;}
-        .newsList li .date{float:right; color:#999;}
-        .newsList li.split{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dotted #ddd;height:0px;line-height:0px;overflow:hidden;}
+        .newsList {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .newsList li {
+            background: url("../images/share/point.png") no-repeat 2px 14px;
+            padding-left: 10px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .newsList li a {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            font-size: 14px;
+        }
+
+        .newsList li .date {
+            float: right;
+            color: #999;
+        }
+
+        .newsList li.split {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #ddd;
+            height: 0px;
+            line-height: 0px;
+            overflow: hidden;
+        }
 
         /* 通用带图片的信息列表_普通式 */
-        .picList{padding:10px;text-align:left;}
-        .picList li{margin:0 5px;height:190px;}
+        .picList {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .picList li {
+            margin: 0 5px;
+            height: 190px;
+        }
 
         h3.break {
-            font-size:16px;
+            font-size: 16px;
             display: block;
             white-space: nowrap;
             word-wrap: normal;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        h3.break>a {
-            text-decoration:none;
+
+        h3.break > a {
+            text-decoration: none;
         }
 
     </style>
@@ -114,10 +224,48 @@
                     <a class="navbar-brand" href="index.html" style="font-size:32px;">尚筹网-创意产品众筹平台</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse" style="float:right;">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="${APP_PATH }/login.htm">登录</a></li>
-                        <li><a href="${APP_PATH }/reg.htm">注册</a></li>
-                    </ul>
+
+                    <c:choose>
+                        <c:when test="${user != null}">
+                            <div class="btn-group" style="margin-top: 10px;">
+                                <button type="button" class="btn btn-default btn-success dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-user"></i> ${user.username} <span
+                                        class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a id="index-user-htm"><i class="glyphicon glyphicon-cog"></i> 后台管理页面</a></li>
+                                    <li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="${APP_PATH }/doLogout.do"><i class="glyphicon glyphicon-off"></i> 退出系统</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </c:when>
+                        <c:when test="${member != null}">
+                            <div class="btn-group" style="margin-top: 10px;">
+                                <button type="button" class="btn btn-default btn-success dropdown-toggle"
+                                        data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-user"></i> ${member.username} <span
+                                        class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a id="index-member-htm"><i class="glyphicon glyphicon-cog"></i> 会员主页</a></li>
+                                    <li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="${APP_PATH }/doLogout.do"><i class="glyphicon glyphicon-off"></i> 退出系统</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="${APP_PATH }/login.htm">登录</a></li>
+                                <li><a href="${APP_PATH }/reg.htm">注册</a></li>
+                            </ul>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
         </nav>
@@ -166,19 +314,22 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-lg-4">
-            <img class="img-circle" src="img/p1.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <img class="img-circle" src="img/p1.jpg" alt="Generic placeholder image"
+                 style="width: 140px; height: 140px;">
             <h2>智能高清监控机器人</h2>
             <p>可爱的造型，摄像安防远程互联的全能设计，让你随时随地守护您的家人，陪伴你的生活。</p>
             <p><a class="btn btn-default" href="project.html" role="button">项目详情 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-            <img class="img-circle" src="img/p2.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <img class="img-circle" src="img/p2.jpg" alt="Generic placeholder image"
+                 style="width: 140px; height: 140px;">
             <h2>NEOKA智能手环</h2>
             <p>要运动更要安全，这款、名为“蝶舞”的NEOKA-V9100智能运动手环为“安全运动而生”。</p>
             <p><a class="btn btn-default" href="project.html" role="button">项目详情 &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-            <img class="img-circle" src="img/p3.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <img class="img-circle" src="img/p3.png" alt="Generic placeholder image"
+                 style="width: 140px; height: 140px;">
             <h2>驱蚊扣</h2>
             <p>随处使用的驱蚊纽扣，<br>解决夏季蚊虫问题。</p>
             <p><a class="btn btn-default" href="project.html" role="button">项目详情 &raquo;</a></p>
@@ -194,92 +345,129 @@
                             <a href="projects.html">更多...</a>
                         </div>
                         <h3>
-                            科技 <small style="color:#FFF;">开启智慧未来</small>
+                            科技
+                            <small style="color:#FFF;">开启智慧未来</small>
                         </h3>
                     </div>
                     <div class="mBd" style="padding-top:10px;">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-1.jpg" />
+                                    <img alt="300x200" src="img/product-1.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">活性富氢净水直饮机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-2.gif" />
+                                    <img alt="300x200" src="img/product-2.gif"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">酷驰触控龙头，智享厨房黑科技</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-3.png" />
+                                    <img alt="300x200" src="img/product-3.png"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">小熊猫鱼眼全景安防摄像机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-4.jpg" />
+                                    <img alt="300x200" src="img/product-4.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">一款精致的机械表</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -300,92 +488,129 @@
                             <a href="projects.html">更多...</a>
                         </div>
                         <h3>
-                            设计 <small style="color:#FFF;">创意改变生活</small>
+                            设计
+                            <small style="color:#FFF;">创意改变生活</small>
                         </h3>
                     </div>
                     <div class="mBd" style="padding-top:10px;">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-5.jpg" />
+                                    <img alt="300x200" src="img/product-5.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">活性富氢净水直饮机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-6.jpg" />
+                                    <img alt="300x200" src="img/product-6.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">酷驰触控龙头，智享厨房黑科技</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-7.jpg" />
+                                    <img alt="300x200" src="img/product-7.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">小熊猫鱼眼全景安防摄像机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-8.jpg" />
+                                    <img alt="300x200" src="img/product-8.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">一款精致的机械表</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -406,92 +631,129 @@
                             <a href="projects.html">更多...</a>
                         </div>
                         <h3>
-                            农业 <small style="color:#FFF;">网络天下肥美</small>
+                            农业
+                            <small style="color:#FFF;">网络天下肥美</small>
                         </h3>
                     </div>
                     <div class="mBd" style="padding-top:10px;">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-9.jpg" />
+                                    <img alt="300x200" src="img/product-9.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">活性富氢净水直饮机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-2.gif" />
+                                    <img alt="300x200" src="img/product-2.gif"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">酷驰触控龙头，智享厨房黑科技</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-3.png" />
+                                    <img alt="300x200" src="img/product-3.png"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">小熊猫鱼眼全景安防摄像机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-4.jpg" />
+                                    <img alt="300x200" src="img/product-4.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">一款精致的机械表</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -512,92 +774,129 @@
                             <a href="projects.html">更多...</a>
                         </div>
                         <h3>
-                            其他 <small style="color:#FFF;">发现更多惊喜</small>
+                            其他
+                            <small style="color:#FFF;">发现更多惊喜</small>
                         </h3>
                     </div>
                     <div class="mBd" style="padding-top:10px;">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-1.jpg" />
+                                    <img alt="300x200" src="img/product-1.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">活性富氢净水直饮机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-2.gif" />
+                                    <img alt="300x200" src="img/product-2.gif"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">酷驰触控龙头，智享厨房黑科技</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-3.png" />
+                                    <img alt="300x200" src="img/product-3.png"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">小熊猫鱼眼全景安防摄像机</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-4.jpg" />
+                                    <img alt="300x200" src="img/product-4.jpg"/>
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">一款精致的机械表</a>
                                         </h3>
                                         <p>
-                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot" title="目标金额" ></i> $20,000 </div>
-                                        <div style="float:right;"><i title="截至日期" class="glyphicon glyphicon-calendar"></i> 2017-20-20 </div>
+                                        <div style="float:left;"><i class="glyphicon glyphicon-screenshot"
+                                                                    title="目标金额"></i> $20,000
+                                        </div>
+                                        <div style="float:right;"><i title="截至日期"
+                                                                     class="glyphicon glyphicon-calendar"></i>
+                                            2017-20-20
+                                        </div>
                                         </p>
                                         <br>
                                         <div class="progress" style="margin-bottom: 4px;">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span >40% </span>
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
+                                                <span>40% </span>
                                             </div>
                                         </div>
-                                        <div><span style="float:right;"><i class="glyphicon glyphicon-star-empty" ></i></span>  <span ><i class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span> </div>
+                                        <div><span style="float:right;"><i
+                                                class="glyphicon glyphicon-star-empty"></i></span> <span><i
+                                                class="glyphicon glyphicon-user" title="支持人数"></i> 12345</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -615,7 +914,11 @@
             <div class="col-md-12 column">
                 <div id="footer">
                     <div class="footerNav">
-                        <a rel="nofollow" href="http://www.atguigu.com">关于我们</a> | <a rel="nofollow" href="http://www.atguigu.com">服务条款</a> | <a rel="nofollow" href="http://www.atguigu.com">免责声明</a> | <a rel="nofollow" href="http://www.atguigu.com">网站地图</a> | <a rel="nofollow" href="http://www.atguigu.com">联系我们</a>
+                        <a rel="nofollow" href="http://www.atguigu.com">关于我们</a> | <a rel="nofollow"
+                                                                                      href="http://www.atguigu.com">服务条款</a>
+                        | <a rel="nofollow" href="http://www.atguigu.com">免责声明</a> | <a rel="nofollow"
+                                                                                        href="http://www.atguigu.com">网站地图</a>
+                        | <a rel="nofollow" href="http://www.atguigu.com">联系我们</a>
                     </div>
                     <div class="copyRight">
                         Copyright ?2017-2017atguigu.com 版权所有
@@ -636,9 +939,10 @@
 <script src="${APP_PATH }/bootstrap/js/bootstrap.min.js"></script>
 <script src="${APP_PATH }/script/docs.min.js"></script>
 <script src="${APP_PATH }/script/back-to-top.js"></script>
+<script src="${APP_PATH}/js/index.js"></script>
 <script>
     $(".thumbnail img").css("cursor", "pointer");
-    $(".thumbnail img").click(function(){
+    $(".thumbnail img").click(function () {
         window.location.href = "project.html";
     });
 </script>

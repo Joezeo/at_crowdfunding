@@ -28,60 +28,60 @@
         </javaModelGenerator>
 
         <!-- !!!! Mapper XML Configurations !!!! -->
-        <sqlMapGenerator targetPackage="com.joezeo.atcrowdfunding.manager.resources" targetProject="./src/main/java/">
+        <sqlMapGenerator targetPackage="com.joezeo.atcrowdfunding.potal.resources" targetProject="./src/main/java/">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- !!!! Mapper Interface Configurations !!!! -->
-        <javaClientGenerator targetPackage="com.joezeo.atcrowdfunding.manager.mapper" targetProject="./src/main/java/" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.joezeo.atcrowdfunding.potal.mapper" targetProject="./src/main/java/" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- !!!! Table Configurations !!!! -->
-        <table tableName="t_account_type_cert" domainObjectName="AccountTypeCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_advertisement" domainObjectName="Advertisement" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_cert" domainObjectName="Cert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_dictionary" domainObjectName="Dictionary" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-<!--        <table tableName="t_member" domainObjectName="Member" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--        <table tableName="t_account_type_cert" domainObjectName="AccountTypeCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-<!--        <table tableName="t_member_address" domainObjectName="MemberAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--        <table tableName="t_advertisement" domainObjectName="Advertisement" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-<!--        <table tableName="t_member_cert" domainObjectName="MemberCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--        <table tableName="t_cert" domainObjectName="Cert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-<!--        <table tableName="t_member_project_follow" domainObjectName="MemberProjectFollow" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--        <table tableName="t_dictionary" domainObjectName="Dictionary" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-        <table tableName="t_message" domainObjectName="Message" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="t_member" domainObjectName="Member" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
-        <table tableName="t_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="t_member_address" domainObjectName="MemberAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
-        <table tableName="t_param" domainObjectName="Param" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="t_member_cert" domainObjectName="MemberCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
-        <table tableName="t_permission" domainObjectName="Permission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="t_member_project_follow" domainObjectName="MemberProjectFollow" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
-        <table tableName="t_project" domainObjectName="Project" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_project_tag" domainObjectName="ProjectTag" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_project_type" domainObjectName="ProjectType" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_return" domainObjectName="Return" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_role_permission" domainObjectName="RolePermission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_tag" domainObjectName="Tag" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_type" domainObjectName="Type" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
+<!--        <table tableName="t_message" domainObjectName="Message" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_param" domainObjectName="Param" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_permission" domainObjectName="Permission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_project" domainObjectName="Project" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_project_tag" domainObjectName="ProjectTag" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_project_type" domainObjectName="ProjectType" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_return" domainObjectName="Return" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_role_permission" domainObjectName="RolePermission" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_tag" domainObjectName="Tag" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_type" domainObjectName="Type" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
 
     </context>
 </generatorConfiguration>
