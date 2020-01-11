@@ -21,6 +21,8 @@ public class Member {
 
     private String accttype;
 
+    private String phone;
+
     public Integer getId() {
         return id;
     }
@@ -99,5 +101,13 @@ public class Member {
 
     public void setAccttype(String accttype) {
         this.accttype = accttype == null ? null : accttype.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

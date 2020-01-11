@@ -31,4 +31,16 @@ public class MemberServiceImpl implements MemberService {
         }
         return member;
     }
+
+    public void updateMember(Member member) {
+        if(member == null){
+            throw new ServiceException("传入的member参数不可为null");
+        }
+
+        int count = memberMapper.updateByPrimaryKeySelective(member);
+        if(count != 1){
+            throw new ServiceException("更新会员数据失败");
+        }
+    }
+
 }

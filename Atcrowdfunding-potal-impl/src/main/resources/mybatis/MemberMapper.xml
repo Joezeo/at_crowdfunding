@@ -12,10 +12,11 @@
     <result column="realname" jdbcType="VARCHAR" property="realname" />
     <result column="cardnum" jdbcType="VARCHAR" property="cardnum" />
     <result column="accttype" jdbcType="CHAR" property="accttype" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
   </resultMap>
   <sql id="Base_Column_List">
     id, loginacct, userpswd, username, email, authstatus, usertype, realname, cardnum, 
-    accttype
+    accttype, phone
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -31,11 +32,11 @@
     insert into t_member (id, loginacct, userpswd, 
       username, email, authstatus, 
       usertype, realname, cardnum, 
-      accttype)
+      accttype, phone)
     values (#{id,jdbcType=INTEGER}, #{loginacct,jdbcType=VARCHAR}, #{userpswd,jdbcType=CHAR}, 
       #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{authstatus,jdbcType=CHAR}, 
       #{usertype,jdbcType=CHAR}, #{realname,jdbcType=VARCHAR}, #{cardnum,jdbcType=VARCHAR}, 
-      #{accttype,jdbcType=CHAR})
+      #{accttype,jdbcType=CHAR}, #{phone,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.joezeo.atcrowdfunding.bean.Member">
     insert into t_member
@@ -70,6 +71,9 @@
       <if test="accttype != null">
         accttype,
       </if>
+      <if test="phone != null">
+        phone,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -101,6 +105,9 @@
       </if>
       <if test="accttype != null">
         #{accttype,jdbcType=CHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -134,6 +141,9 @@
       <if test="accttype != null">
         accttype = #{accttype,jdbcType=CHAR},
       </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -147,7 +157,8 @@
       usertype = #{usertype,jdbcType=CHAR},
       realname = #{realname,jdbcType=VARCHAR},
       cardnum = #{cardnum,jdbcType=VARCHAR},
-      accttype = #{accttype,jdbcType=CHAR}
+      accttype = #{accttype,jdbcType=CHAR},
+      phone = #{phone,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

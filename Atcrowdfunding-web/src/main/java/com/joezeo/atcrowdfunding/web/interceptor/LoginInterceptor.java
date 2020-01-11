@@ -18,7 +18,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         uris = new HashSet<>();
         uris.add("/index.htm");
         uris.add("/reg.htm");
-//        uris.add("/login.htm");
+//        uris.add("/login.htm"); 从白名单中去除是为了防止用户登录了，再次通过网址访问登录页面
         uris.add("/doReg.do");
         uris.add("/doLogin.do");
         uris.add("/doLogout.do");

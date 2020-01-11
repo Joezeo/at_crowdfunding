@@ -46,14 +46,14 @@
 <!--               enableUpdateByExample="false"/>-->
 <!--        <table tableName="t_dictionary" domainObjectName="Dictionary" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-        <table tableName="t_member" domainObjectName="Member" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_member_address" domainObjectName="MemberAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_member_cert" domainObjectName="MemberCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="t_member_project_follow" domainObjectName="MemberProjectFollow" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
+<!--        <table tableName="t_member" domainObjectName="Member" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_member_address" domainObjectName="MemberAddress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_member_cert" domainObjectName="MemberCert" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+<!--        <table tableName="t_member_project_follow" domainObjectName="MemberProjectFollow" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
 <!--        <table tableName="t_message" domainObjectName="Message" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
 <!--        <table tableName="t_order" domainObjectName="Order" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
@@ -83,5 +83,7 @@
 <!--        <table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
 
+        <table tableName="t_ticket" domainObjectName="Ticket" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>
