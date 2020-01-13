@@ -1,13 +1,16 @@
 package com.joezeo.atcrowdfunding.potal.service.impl;
 
+import com.joezeo.atcrowdfunding.bean.Cert;
 import com.joezeo.atcrowdfunding.bean.Member;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
+import com.joezeo.atcrowdfunding.manager.service.CertService;
 import com.joezeo.atcrowdfunding.potal.mapper.MemberMapper;
 import com.joezeo.atcrowdfunding.potal.service.MemberService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -15,6 +18,9 @@ public class MemberServiceImpl implements MemberService {
 
     @Resource
     private MemberMapper memberMapper;
+
+    @Resource
+    private CertService certService;
 
     public Member login(Map<String, Object> loginInfo) {
         if(loginInfo == null){
@@ -42,5 +48,6 @@ public class MemberServiceImpl implements MemberService {
             throw new ServiceException("更新会员数据失败");
         }
     }
+
 
 }

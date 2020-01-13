@@ -8,4 +8,5 @@ public interface MemberService {
     Member login(Map<String, Object> loginInfo);
 
     void updateMember(Member member);
+
 }

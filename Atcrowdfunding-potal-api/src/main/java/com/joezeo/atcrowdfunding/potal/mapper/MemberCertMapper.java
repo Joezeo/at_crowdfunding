@@ -2,6 +2,8 @@ package com.joezeo.atcrowdfunding.potal.mapper;
 
 import com.joezeo.atcrowdfunding.bean.MemberCert;
 
+import java.util.List;
+
 public interface MemberCertMapper {
     int deleteByPrimaryKey(Integer id);
 

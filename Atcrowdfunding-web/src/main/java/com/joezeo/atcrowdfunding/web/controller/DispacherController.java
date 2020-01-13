@@ -201,6 +201,7 @@ public class DispacherController {
     public String htmMemberHome(){
         return "member/home";
     }
+
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){

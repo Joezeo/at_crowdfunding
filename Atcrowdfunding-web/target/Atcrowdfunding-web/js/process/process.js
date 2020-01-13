@@ -57,7 +57,7 @@ function doDeleteProcess() {
         success: function (jsonResult) {
             if(jsonResult.success){
                 doQueryPage(0);
-                alert("删除流程成功h");
+                alert("删除流程成功");
             } else {
                 alert(jsonResult.message);
             }

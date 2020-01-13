@@ -88,4 +88,23 @@ public class CertServiceImpl implements CertService {
         }
         return cert;
     }
+
+    public List<Cert> queryAll() {
+        List<Cert> certs = certMapper.selectAll();
+        if(certs == null){
+            throw new ServiceException("查询资质信息失败");
+        }
+        return certs;
+    }
+
+    public List<Cert> queryCertByAccttype(String accttype) {
+        if(accttype == null || "".equals(accttype)){
+            throw new ServiceException("传入的参数accttype不可为空");
+        }
+        List<Cert> list = certMapper.selectCertByAccttype(accttype);
+        if(list == null){
+            throw new ServiceException("查询该会员用户类型对应资质失败");
+        }
+        return list;
+    }
 }

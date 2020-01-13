@@ -1,5 +1,7 @@
 package com.joezeo.atcrowdfunding.common.vo;
 
+import com.joezeo.atcrowdfunding.bean.MemberCert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,13 +9,13 @@ import java.util.List;
  * 用于接收前端传来的多参数集合\数组
  */
 public class ParamModel {
-    private List<Integer> integerList = new ArrayList<>();
+    List<MemberCert> certimgs = new ArrayList<>();
 
-    public List<Integer> getIntegerList() {
-        return integerList;
+    public List<MemberCert> getCertimgs() {
+        return certimgs;
     }
 
-    public void setIntegerList(List<Integer> integerList) {
-        this.integerList = integerList;
+    public void setCertimgs(List<MemberCert> certimgs) {
+        this.certimgs = certimgs;
     }
 }

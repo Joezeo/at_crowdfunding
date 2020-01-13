@@ -2,6 +2,8 @@ package com.joezeo.atcrowdfunding.manager.mapper;
 
 import com.joezeo.atcrowdfunding.bean.AccountTypeCert;
 
+import java.util.List;
+
 public interface AccountTypeCertMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface AccountTypeCertMapper {
     int updateByPrimaryKeySelective(AccountTypeCert record);
 
     int updateByPrimaryKey(AccountTypeCert record);
+
+    List<AccountTypeCert> selectAll();
+
+    int deleteByAccttypeCertid(AccountTypeCert certtype);
 }

@@ -20,11 +20,11 @@
           <element id="archive" name="Atcrowdfunding-potal-api-1.0-SNAPSHOT.jar">
             <element id="module-output" name="Atcrowdfunding-potal-api" />
           </element>
-          <element id="archive" name="Atcrowdfunding-manager-impl-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="Atcrowdfunding-manager-impl" />
-          </element>
           <element id="archive" name="Atcrowdfunding-manager-api-1.0-SNAPSHOT.jar">
             <element id="module-output" name="Atcrowdfunding-manager-api" />
+          </element>
+          <element id="archive" name="Atcrowdfunding-manager-impl-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="Atcrowdfunding-manager-impl" />
           </element>
           <element id="archive" name="Atcrowdfunding-common-1.0-SNAPSHOT.jar">
             <element id="module-output" name="Atcrowdfunding-common" />

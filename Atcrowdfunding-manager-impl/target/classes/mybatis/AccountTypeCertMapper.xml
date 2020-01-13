@@ -68,4 +68,14 @@
       certid = #{certid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultType="AccountTypeCert">
+    select * from  t_account_type_cert
+  </select>
+
+  <delete id="deleteByAccttypeCertid" parameterType="AccountTypeCert">
+    delete * from t_account_type_cert
+    where accttype = #{accttype}
+    and certid = #{certid}
+  </delete>
 </mapper>

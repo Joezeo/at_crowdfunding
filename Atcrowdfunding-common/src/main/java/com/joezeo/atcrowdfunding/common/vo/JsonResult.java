@@ -22,6 +22,9 @@ public class JsonResult{
         this.success = true;
     }
 
+    public JsonResult() {
+    }
+
     public boolean isSuccess() {
         return success;
     }

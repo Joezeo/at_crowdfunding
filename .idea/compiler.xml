@@ -7,17 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Atcrowdfunding-potal-api" />
+        <module name="mybatis-MBG" />
         <module name="Atcrowdfunding-bean" />
         <module name="Atcrowdfunding-manager-impl" />
         <module name="Atcrowdfunding-potal-impl" />
-        <module name="mybatis-MBG" />
         <module name="Atcrowdfunding-web" />
         <module name="Atcrowdfunding-manager-api" />
         <module name="Atcrowdfunding-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Atcrowdfunding-bean" target="1.5" />
+      <module name="Atcrowdfunding-bean" target="1.7" />
       <module name="Atcrowdfunding-common" target="1.7" />
       <module name="Atcrowdfunding-manager-api" target="1.5" />
       <module name="Atcrowdfunding-manager-impl" target="1.5" />

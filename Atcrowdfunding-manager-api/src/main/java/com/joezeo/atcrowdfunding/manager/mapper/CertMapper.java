@@ -22,4 +22,8 @@ public interface CertMapper {
     List<Cert> selectByPage(Map<String, Object> map);
 
     int selectCount(@Param("name") String name);
+
+    List<Cert> selectAll();
+
+    List<Cert> selectCertByAccttype(String accttype);
 }

@@ -105,5 +105,6 @@
   <select id="selectByMemberid" parameterType="int" resultType="Ticket">
     select * from t_ticket
     where memberid = #{memberid}
+    and status = 0
   </select>
 </mapper>

@@ -75,4 +75,14 @@
       </if>
     </where>
   </select>
+
+    <select id="selectAll" resultType="Cert">
+      select * from t_cert
+    </select>
+
+    <select id="selectCertByAccttype" resultType="Cert">
+      select * from t_cert
+      where id in
+      (select certid from t_account_type_cert where accttype = #{accttype})
+    </select>
 </mapper>
