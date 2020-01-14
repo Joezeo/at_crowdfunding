@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class MemberCertServiceImpl implements MemberCertService {
@@ -26,5 +27,16 @@ public class MemberCertServiceImpl implements MemberCertService {
                 throw new ServiceException("保存会员资质信息失败，请稍后重试");
             }
         }
+    }
+
+    public List<Map<String, Object>> queryCertsByMemberid(Integer memberid) {
+        if(memberid == null || memberid <= 0){
+            throw new ServiceException("id值异常");
+        }
+        List<Map<String,Object>> certs = memberCertMapper.selectCertsByMemberid(memberid);
+        if(certs == null){
+            throw new ServiceException("获取会员上传资质信息失败");
+        }
+        return certs;
     }
 }

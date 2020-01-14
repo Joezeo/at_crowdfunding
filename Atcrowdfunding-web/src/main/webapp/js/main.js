@@ -11,6 +11,7 @@ $(function () {
     $("#main-region").on("click", "#li_cert", loadCertPage);
     $("#main-region").on("click", "#li_process", loadProcessPage);
     $("#main-region").on("click", "#li_certtype", loadCerttypePage);
+    $("#main-region").on("click", "#li_authcert", loadAuthcertPage);
 
     controlMenu();
     // $("#li_user").click(loadUserPage);
@@ -115,6 +116,18 @@ function loadCerttypePage() {
     $("#navbar_title").html("众筹平台 - 分类管理");
     $("#navbar_title").data("groupId",7);
     $("#content_div").load("/certtype/certtype.htm?t="+Math.random());
+
+    $(".list-group a").css("color", DEFAULT_COLOR);
+    $(this).css("color","red");
+
+    return false;
+}
+
+// 内容区域加载实名认证审核页面
+function loadAuthcertPage() {
+    $("#navbar_title").html("众筹平台 - 实名认证审核");
+    $("#navbar_title").data("groupId",8);
+    $("#content_div").load("/authcert.htm?t="+Math.random());
 
     $(".list-group a").css("color", DEFAULT_COLOR);
     $(this).css("color","red");

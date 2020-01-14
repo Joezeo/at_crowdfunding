@@ -202,6 +202,11 @@ public class DispacherController {
         return "member/home";
     }
 
+    @RequestMapping("/authcert")
+    public String htmAuthCert(){
+        return "authcert/authcert";
+    }
+
     // 同步请求
     /*@RequestMapping("/doLogin")
     public String doLogin(String loginacct, String userpswd, String type, HttpSession session){

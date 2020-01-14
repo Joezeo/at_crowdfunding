@@ -79,4 +79,11 @@
       iconpath = #{iconpath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCertsByMemberid" resultType="map">
+    select mc.iconpath as iconpath,c.name as name from t_member_cert mc
+    join t_cert c
+    on mc.certid = c.id
+    where mc.memberid = #{memberid}
+  </select>
 </mapper>

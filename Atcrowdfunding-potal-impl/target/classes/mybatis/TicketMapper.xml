@@ -107,4 +107,23 @@
     where memberid = #{memberid}
     and status = 0
   </select>
+
+  <update id="updateByMemberidSelective" parameterType="Ticket">
+    update t_ticket
+    <set>
+      <if test="piid != null">
+        piid = #{piid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="authcode != null">
+        authcode = #{authcode,jdbcType=CHAR},
+      </if>
+      <if test="pstep != null">
+        pstep = #{pstep,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where memberid = #{memberid}
+  </update>
 </mapper>

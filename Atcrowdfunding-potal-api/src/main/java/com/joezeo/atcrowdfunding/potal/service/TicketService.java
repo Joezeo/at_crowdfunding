@@ -8,4 +8,6 @@ public interface TicketService {
     void addTicket(Ticket ticket);
 
     void updateTicket(Ticket ticket);
+
+    void updateTicketByMemberid(Ticket ticket);
 }

@@ -1,6 +1,5 @@
 package com.joezeo.atcrowdfunding.potal.service.impl;
 
-import com.joezeo.atcrowdfunding.bean.Cert;
 import com.joezeo.atcrowdfunding.bean.Member;
 import com.joezeo.atcrowdfunding.common.exception.ServiceException;
 import com.joezeo.atcrowdfunding.common.utils.MD5Util;
@@ -10,7 +9,6 @@ import com.joezeo.atcrowdfunding.potal.service.MemberService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -47,6 +45,17 @@ public class MemberServiceImpl implements MemberService {
         if(count != 1){
             throw new ServiceException("更新会员数据失败");
         }
+    }
+
+    public Member queryByMemberid(Integer memberid) {
+        if(memberid == null || memberid <= 0){
+            throw new ServiceException("id值异常");
+        }
+        Member member = memberMapper.selectByPrimaryKey(memberid);
+        if(member == null){
+            throw new ServiceException("查询用户信息失败");
+        }
+        return member;
     }
 
 

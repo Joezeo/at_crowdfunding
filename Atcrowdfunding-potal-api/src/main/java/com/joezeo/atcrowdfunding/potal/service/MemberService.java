@@ -9,4 +9,5 @@ public interface MemberService {
 
     void updateMember(Member member);
 
+    Member queryByMemberid(Integer memberid);
 }

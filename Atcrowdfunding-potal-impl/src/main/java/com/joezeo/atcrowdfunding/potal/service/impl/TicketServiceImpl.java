@@ -45,4 +45,15 @@ public class TicketServiceImpl implements TicketService {
             throw new ServiceException("更新流程单失败");
         }
     }
+
+    public void updateTicketByMemberid(Ticket ticket) {
+        if(ticket == null){
+            throw new ServiceException("传入的ticket值不可为null");
+        }
+
+        int count = ticketMapper.updateByMemberidSelective(ticket);
+        if(count != 1){
+            throw new ServiceException("更新流程单失败");
+        }
+    }
 }

@@ -16,4 +16,6 @@ public interface TicketMapper {
     int updateByPrimaryKey(Ticket record);
 
     Ticket selectByMemberid(Integer memberid);
+
+    int updateByMemberidSelective(Ticket ticket);
 }

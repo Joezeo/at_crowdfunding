@@ -167,4 +167,11 @@
     where loginacct=#{loginacct}
     and userpswd = #{userpswd}
   </select>
+
+  <select id="selectMemberByPiid" resultType="Member">
+    select t_member.* from t_member
+    join t_ticket
+    on t_member.id = t_ticket.memberid
+    where piid = #{piid}
+  </select>
 </mapper>
